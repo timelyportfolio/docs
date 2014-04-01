@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick Start &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Getting Started" href="../intro/index.html"/>
+        <link rel="prev" title="rCharts" href="../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/create.html">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/quickstart/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>You can install rCharts from github using the devtools package</p>
+<div class="highlight-r"><div class="highlight"><pre>require<span class="p">(</span>devtools<span class="p">)</span>
+install_github<span class="p">(</span><span class="s">&#39;rCharts&#39;</span><span class="p">,</span> <span class="s">&#39;ramnathv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The design philosophy behind rCharts is to make the process of creating, customizing and sharing interactive visualizations easy.</p>
+<p><strong>Create</strong></p>
+<p>rCharts uses a formula interface to specify plots, just like the lattice package. Here are a few examples you can try out in your R console.</p>
+<div class="highlight-r"><div class="highlight"><pre>require<span class="p">(</span>rCharts<span class="p">)</span>
+
+<span class="c1">## Example 1 Facetted Scatterplot</span>
+names<span class="p">(</span>iris<span class="p">)</span> <span class="o">=</span> gsub<span class="p">(</span><span class="s">&quot;\\.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> names<span class="p">(</span>iris<span class="p">))</span>
+rPlot<span class="p">(</span>SepalLength <span class="o">~</span> SepalWidth <span class="o">|</span> Species<span class="p">,</span> data <span class="o">=</span> iris<span class="p">,</span> color <span class="o">=</span> <span class="s">&#39;Species&#39;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+
+<span class="c1">## Example 2 Facetted Barplot</span>
+hair_eye <span class="o">=</span> as.data.frame<span class="p">(</span>HairEyeColor<span class="p">)</span>
+rPlot<span class="p">(</span>Freq <span class="o">~</span> Hair <span class="o">|</span> Eye<span class="p">,</span> color <span class="o">=</span> <span class="s">&#39;Eye&#39;</span><span class="p">,</span> data <span class="o">=</span> hair_eye<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Customize</strong></p>
+<p>rCharts supports multiple javascript charting libraries, each with its own strengths. Each of these libraries has multiple customization options, most of which are supported within rCharts.</p>
+<p><strong>Share</strong></p>
+<p>rCharts allows you to share your visualization in multiple ways, as a standalone page, embedded in a shiny application, or embedded in a tutorial/blog post.</p>
+<p><strong>Publish to Gist/RPubs</strong></p>
+<div class="highlight-r"><div class="highlight"><pre>names<span class="p">(</span>iris<span class="p">)</span> <span class="o">=</span> gsub<span class="p">(</span><span class="s">&quot;\\.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> names<span class="p">(</span>iris<span class="p">))</span>
+r1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>SepalLength <span class="o">~</span> SepalWidth <span class="o">|</span> Species<span class="p">,</span> data <span class="o">=</span> iris<span class="p">,</span>
+  color <span class="o">=</span> <span class="s">&#39;Species&#39;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&#39;Scatterplot&#39;</span><span class="p">,</span> host <span class="o">=</span> <span class="s">&#39;gist&#39;</span><span class="p">)</span>
+r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&#39;Scatterplot&#39;</span><span class="p">,</span> host <span class="o">=</span> <span class="s">&#39;rpubs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Use with Shiny</strong></p>
+<p>rCharts is easy to embed into a Shiny application using the utility functions renderChart and showOutput. Here is an example of an rCharts Shiny App.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="c1">## server.r</span>
+require<span class="p">(</span>rCharts<span class="p">)</span>
+shinyServer<span class="p">(</span><span class="kr">function</span><span class="p">(</span>input<span class="p">,</span> output<span class="p">)</span> <span class="p">{</span>
+  output<span class="o">$</span>myChart <span class="o">&lt;-</span> renderChart<span class="p">({</span>
+    names<span class="p">(</span>iris<span class="p">)</span> <span class="o">=</span> gsub<span class="p">(</span><span class="s">&quot;\\.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> names<span class="p">(</span>iris<span class="p">))</span>
+    p1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>input<span class="o">$</span>x<span class="p">,</span> input<span class="o">$</span>y<span class="p">,</span> data <span class="o">=</span> iris<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Species&quot;</span><span class="p">,</span>
+      facet <span class="o">=</span> <span class="s">&quot;Species&quot;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+    <span class="kr">return</span><span class="p">(</span>p1<span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+
+<span class="c1">## ui.R</span>
+require<span class="p">(</span>rCharts<span class="p">)</span>
+shinyUI<span class="p">(</span>pageWithSidebar<span class="p">(</span>
+  headerPanel<span class="p">(</span><span class="s">&quot;rCharts: Interactive Charts from R using polychart.js&quot;</span><span class="p">),</span>
+
+  sidebarPanel<span class="p">(</span>
+    selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;x&quot;</span><span class="p">,</span>
+     label <span class="o">=</span> <span class="s">&quot;Choose X&quot;</span><span class="p">,</span>
+     choices <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;SepalLength&#39;</span><span class="p">,</span> <span class="s">&#39;SepalWidth&#39;</span><span class="p">,</span> <span class="s">&#39;PetalLength&#39;</span><span class="p">,</span> <span class="s">&#39;PetalWidth&#39;</span><span class="p">),</span>
+     selected <span class="o">=</span> <span class="s">&quot;SepalLength&quot;</span><span class="p">),</span>
+    selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">,</span>
+      label <span class="o">=</span> <span class="s">&quot;Choose Y&quot;</span><span class="p">,</span>
+      choices <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;SepalLength&#39;</span><span class="p">,</span> <span class="s">&#39;SepalWidth&#39;</span><span class="p">,</span> <span class="s">&#39;PetalLength&#39;</span><span class="p">,</span> <span class="s">&#39;PetalWidth&#39;</span><span class="p">),</span>
+      selected <span class="o">=</span> <span class="s">&quot;SepalWidth&quot;</span><span class="p">)</span>
+  <span class="p">),</span>
+  mainPanel<span class="p">(</span>
+    showOutput<span class="p">(</span><span class="s">&quot;myChart&quot;</span><span class="p">,</span> <span class="s">&quot;polycharts&quot;</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<p>Most of the implementation in <tt class="docutils literal"><span class="pre">rCharts</span></tt> is inspired by <a class="reference external" href="https://github.com/metagraf/rHighcharts">rHighcharts</a> and <a class="reference external" href="https://github.com/metagraf/rVega">rVega</a>. I have reused some code from these packages verbatim, and would like to acknowledge the efforts of its author <a class="reference external" href="https://github.com/reinholdsson">Thomas Reinholdsson</a>, who has since merged his <a class="reference external" href="https://github.com/metagraf/rHighcharts">rHighcharts</a> package into rCharts. I would also like to thank <a class="reference external" href="https://github.com/timelyportfolio">&#64;timelyportfolio</a> for adding <a class="reference external" href="http://dimplejs.org">Dimple JS</a> to rCharts, as well as for his contagious enthusiasm, which has egged me on constantly.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>rCharts is licensed under the MIT License. However, the JavaScript charting libraries that are included with this package are licensed under their own terms. All of them are free for non-commercial and commercial use, with the exception of <strong>Polychart</strong> and <strong>Highcharts</strong>, both of which require paid licenses for commercial use. For more details on the licensing terms, you can consult the <tt class="docutils literal"><span class="pre">License.md</span></tt> file in each of the charting libraries.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>There has been a lot of interest recently in creating packages that allow R users to make use of Javascript charting libraries.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ggvis.rstudio.com">ggvis</a> by <a class="reference external" href="http://rstudio.com">RStudio</a></li>
+<li><a class="reference external" href="https://github.com/nachocab/clickme">clickme</a> by <a class="reference external" href="https://github.com/nachocab">Nacho Caballero</a></li>
+</ul>
+<style>body {text-align: justify;}</body></div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../intro/index.html" class="btn btn-neutral float-right" title="Getting Started">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="rCharts"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

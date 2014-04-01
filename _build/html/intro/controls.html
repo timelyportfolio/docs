@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Controls &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create.html">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Controls</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/intro/controls.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="controls">
+<span id="id1"></span><h1>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h1>
+<p>Let us start by creating a simple scatterplot of mileage vs weight of cars from the ubiquitous <tt class="docutils literal"><span class="pre">mtcars</span></tt> dataset.</p>
+<div class="highlight-r"><div class="highlight"><pre>library<span class="p">(</span>rCharts<span class="p">)</span>
+n1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>mpg <span class="o">~</span> wt<span class="p">,</span> data <span class="o">=</span> mtcars<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;gear&quot;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;point&quot;</span><span class="p">)</span>
+n1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/controls-polychart1.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart1fad3b254b44
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/controls-polychart1.html"><tt class="xref download docutils literal"><span class="pre">View</span></tt></a></p>
+<div class="section" id="angularjs">
+<h2>AngularJS<a class="headerlink" href="#angularjs" title="Permalink to this headline">¶</a></h2>
+<p>Suppose, we want to let the user choose the <tt class="docutils literal"><span class="pre">`</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> and <tt class="docutils literal"><span class="pre">color</span></tt> variables interactively. This can be done using the <tt class="xref py py-func docutils literal"><span class="pre">addControls()</span></tt> method, which accepts three arguments: (1) the variable to control, (2) it&#8217;s current value and (3) the possible set of values to choose from. By default, <tt class="docutils literal"><span class="pre">addControls</span></tt> uses AngularJS to add the controls.</p>
+<div class="highlight-r"><div class="highlight"><pre>n1<span class="o">$</span>addControls<span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> value <span class="o">=</span> <span class="s">&quot;wt&quot;</span><span class="p">,</span> values <span class="o">=</span> names<span class="p">(</span>mtcars<span class="p">))</span>
+n1<span class="o">$</span>addControls<span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span> value <span class="o">=</span> <span class="s">&quot;wt&quot;</span><span class="p">,</span> values <span class="o">=</span> names<span class="p">(</span>mtcars<span class="p">))</span>
+n1<span class="o">$</span>addControls<span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span> value <span class="o">=</span> <span class="s">&quot;gear&quot;</span><span class="p">,</span> values <span class="o">=</span> names<span class="p">(</span>mtcars<span class="p">))</span>
+n1
+</pre></div>
+</div>
+<img alt="../_images/controls-polychart2.png" src="../_images/controls-polychart2.png" />
+<p><a class="reference download internal" href="../_downloads/controls-polychart2.html"><tt class="xref download docutils literal"><span class="pre">View</span></tt></a></p>
+</div>
+<div class="section" id="datgui">
+<h2>DatGUI<a class="headerlink" href="#datgui" title="Permalink to this headline">¶</a></h2>
+<p>Let us build another chart with interactive controls, this time using the <a class="reference external" href="http://nvd3.org">NVD3</a> library for the chart and the <a class="reference external" href="http://davidwalsh.name/dat-gui">DatGUI</a> javascript library for interactive controls. As before, the code stays almost the same, except that we swap the controls template to use <tt class="docutils literal"><span class="pre">datgui</span></tt> instead of <tt class="docutils literal"><span class="pre">angularjs</span></tt>.</p>
+<div class="highlight-r"><div class="highlight"><pre>HairEye <span class="o">&lt;-</span> subset<span class="p">(</span>as.data.frame<span class="p">(</span>HairEyeColor<span class="p">),</span> Sex <span class="o">==</span> <span class="s">&quot;Male&quot;</span><span class="p">)</span>
+n1 <span class="o">&lt;-</span> nPlot<span class="p">(</span>Freq <span class="o">~</span> Eye<span class="p">,</span> data <span class="o">=</span> HairEye<span class="p">,</span> group <span class="o">=</span> <span class="s">&#39;Hair&#39;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;multiBarChart&#39;</span><span class="p">)</span>
+n1<span class="o">$</span>addControls<span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">,</span> <span class="s">&quot;multiBarChart&quot;</span><span class="p">,</span>
+  values <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;multiBarChart&#39;</span><span class="p">,</span> <span class="s">&#39;multiBarHorizontalChart&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+n1<span class="o">$</span>setTemplate<span class="p">(</span>script <span class="o">=</span> system.file<span class="p">(</span><span class="s">&#39;libraries&#39;</span><span class="p">,</span> <span class="s">&#39;nvd3&#39;</span><span class="p">,</span> <span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="s">&#39;datgui.html&#39;</span><span class="p">,</span> package <span class="o">=</span> <span class="s">&#39;rCharts&#39;</span><span class="p">))</span>
+n1<span class="o">$</span>set<span class="p">(</span>width <span class="o">=</span> <span class="m">650</span><span class="p">,</span> height <span class="o">=</span> <span class="m">500</span><span class="p">)</span>
+n1
+</pre></div>
+</div>
+<img alt="../_images/controls-nvd31.png" src="../_images/controls-nvd31.png" />
+<p><a class="reference download internal" href="../_downloads/controls-nvd31.html"><tt class="xref download docutils literal"><span class="pre">View</span></tt></a></p>
+<p>Currently, rCharts only supports simple controls, and my plan is to extend this support. In my next post, I will discuss how rCharts can integrate with a server side framework like <a class="reference external" href="http://rstudio.com/shiny">Shiny</a> or <a class="reference external" href="http://opencpu.org">OpenCPU</a> to allow for greater level of interactivity, that might involve more extensive manipulation of data.</p>
+<style>
+  #angularjs iframe.rChart {height: 700px;}
+  body {text-align: justify;}
+ </style></div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

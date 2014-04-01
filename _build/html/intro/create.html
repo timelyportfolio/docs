@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Create &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Share" href="share.html"/>
+        <link rel="prev" title="Getting Started" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimple/index.html">dimple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Create</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/intro/create.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="create">
+<span id="intro"></span><h1>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+<p>rCharts uses a formula interface to specify plots, just like the lattice package. Here are a few examples you can try out in your R console.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Every example comes with an edit button that allows you to experiment with the code online. The online playground was built using <a class="reference external" href="http://opencpu.org">OpenCPU</a></p>
+</div>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<p>First let us load the <tt class="docutils literal"><span class="pre">rCharts</span></tt> package</p>
+<div class="highlight-r"><div class="highlight"><pre>library<span class="p">(</span>rCharts<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="polycharts">
+<h2>Polycharts<a class="headerlink" href="#polycharts" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>r1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>mpg <span class="o">~</span> wt<span class="p">,</span> data <span class="o">=</span> mtcars<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+r1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-polychart.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart1c8b238179a6
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=intro-polychart" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/intro-polychart.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="nvd3">
+<h2>NVD3<a class="headerlink" href="#nvd3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>hair_eye <span class="o">=</span> as.data.frame<span class="p">(</span>HairEyeColor<span class="p">)</span>
+p2 <span class="o">&lt;-</span> nPlot<span class="p">(</span>Freq <span class="o">~</span> Hair<span class="p">,</span> group <span class="o">=</span> <span class="s">&#39;Eye&#39;</span><span class="p">,</span>
+  data <span class="o">=</span> subset<span class="p">(</span>hair_eye<span class="p">,</span> Sex <span class="o">==</span> <span class="s">&quot;Female&quot;</span><span class="p">),</span>
+  type <span class="o">=</span> <span class="s">&#39;multiBarChart&#39;</span>
+<span class="p">)</span>
+p2<span class="o">$</span>chart<span class="p">(</span>color <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;brown&#39;</span><span class="p">,</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;#594c26&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">))</span>
+p2
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-nvd3.html
+' scrolling='no' seamless
+class='rChart nvd3 '
+id=iframe-
+chart1c8b57e2bd4b
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=intro-nvd3" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/intro-nvd3.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<p><a class="reference external" href="_downloads/intro-nvd3.html">View Interactive</a></p>
+</div>
+<div class="section" id="morris">
+<h2>Morris<a class="headerlink" href="#morris" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>data<span class="p">(</span>economics<span class="p">,</span> package <span class="o">=</span> <span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+econ <span class="o">&lt;-</span> transform<span class="p">(</span>economics<span class="p">,</span> date <span class="o">=</span> as.character<span class="p">(</span>date<span class="p">))</span>
+m1 <span class="o">&lt;-</span> mPlot<span class="p">(</span>x <span class="o">=</span> <span class="s">&quot;date&quot;</span><span class="p">,</span> y <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;psavert&quot;</span><span class="p">,</span> <span class="s">&quot;uempmed&quot;</span><span class="p">),</span> type <span class="o">=</span> <span class="s">&quot;Line&quot;</span><span class="p">,</span> data <span class="o">=</span> econ<span class="p">)</span>
+m1<span class="o">$</span>set<span class="p">(</span>pointSize <span class="o">=</span> <span class="m">0</span><span class="p">,</span> lineWidth <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+m1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-morris.html
+' scrolling='no' seamless
+class='rChart morris '
+id=iframe-
+chart1c8b1398a0d1
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=intro-morris" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/intro-morris.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="highcharts">
+<h2>Highcharts<a class="headerlink" href="#highcharts" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>h1 <span class="o">&lt;-</span> hPlot<span class="p">(</span>x <span class="o">=</span> <span class="s">&quot;Wr.Hnd&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;NW.Hnd&quot;</span><span class="p">,</span>
+  data <span class="o">=</span> MASS<span class="o">::</span>survey<span class="p">,</span>
+  type <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;line&quot;</span><span class="p">,</span> <span class="s">&quot;bubble&quot;</span><span class="p">,</span> <span class="s">&quot;scatter&quot;</span><span class="p">),</span>
+  group <span class="o">=</span> <span class="s">&quot;Clap&quot;</span><span class="p">,</span>
+  size <span class="o">=</span> <span class="s">&quot;Age&quot;</span>
+<span class="p">)</span>
+h1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-highcharts.html
+' scrolling='no' seamless
+class='rChart highcharts '
+id=iframe-
+chart1c8b8689f0e
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=intro-highcharts" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/intro-highcharts.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="rickshaw">
+<h2>Rickshaw<a class="headerlink" href="#rickshaw" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>usp <span class="o">=</span> reshape2<span class="o">::</span>melt<span class="p">(</span>USPersonalExpenditure<span class="p">)</span>
+usp<span class="o">$</span>Var2 <span class="o">&lt;-</span> as.numeric<span class="p">(</span>as.POSIXct<span class="p">(</span>paste0<span class="p">(</span>usp<span class="o">$</span>Var2<span class="p">,</span> <span class="s">&quot;-01-01&quot;</span><span class="p">)))</span>
+p4 <span class="o">&lt;-</span> Rickshaw<span class="o">$</span>new<span class="p">()</span>
+p4<span class="o">$</span>layer<span class="p">(</span>value <span class="o">~</span> Var2<span class="p">,</span> group <span class="o">=</span> <span class="s">&quot;Var1&quot;</span><span class="p">,</span> data <span class="o">=</span> usp<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;area&quot;</span><span class="p">)</span>
+p4<span class="o">$</span>set<span class="p">(</span>slider <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+p4
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-rickshaw.html
+' scrolling='no' seamless
+class='rChart rickshaw '
+id=iframe-
+chart1c8b75560ed8
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/intro-rickshaw.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<a href="../playground.html#?n=intro-rickshaw" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/></div>
+<div class="section" id="xcharts">
+<h2>xCharts<a class="headerlink" href="#xcharts" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>require<span class="p">(</span>reshape2<span class="p">)</span>
+uspexp <span class="o">&lt;-</span> melt<span class="p">(</span>USPersonalExpenditure<span class="p">)</span>
+names<span class="p">(</span>uspexp<span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;category&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">)</span>
+x1 <span class="o">&lt;-</span> xPlot<span class="p">(</span>value <span class="o">~</span> year<span class="p">,</span> group <span class="o">=</span> <span class="s">&#39;category&#39;</span><span class="p">,</span> data <span class="o">=</span> uspexp<span class="p">,</span>
+  type <span class="o">=</span> <span class="s">&#39;line-dotted&#39;</span><span class="p">)</span>
+x1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/intro-xcharts.html
+' scrolling='no' seamless
+class='rChart xcharts '
+id=iframe-
+chart1c8b64e8c316
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/intro-xcharts.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<a href="../playground.html#?n=intro-xcharts" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/>      <br/><br/>
+<style>
+  iframe.rChart{margin-bottom: 20px;}
+  a.download{display: none;}
+  a.button{color: black;}
+  #rickshaw iframe.rChart{height: 450px;}</style>
+</style></div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="share.html" class="btn btn-neutral float-right" title="Share">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Getting Started"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

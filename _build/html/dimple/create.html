@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Create &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="dimple" href="index.html"/>
+        <link rel="next" title="Tutorials" href="../tutorials/index.html"/>
+        <link rel="prev" title="dimple" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/create.html">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">dimple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../libraries/index.html">Libraries</a> &raquo;</li>
+      
+          <li><a href="index.html">dimple</a> &raquo;</li>
+      
+    <li>Create</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/dimple/create.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="create">
+<span id="nvd3-charttypes"></span><h1>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+<style>iframe.rChart{margin-bottom: 20px;}</style><p>The <a class="reference external" href="http://dimplejs.org">dimple</a> library supports most of the common chart types.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#scatter-bubble-chart" id="id1">Scatter/bubble Chart</a></li>
+<li><a class="reference internal" href="#bar-chart" id="id2">Bar Chart</a></li>
+<li><a class="reference internal" href="#bar-horizontal-chart" id="id3">Bar Horizontal Chart</a></li>
+<li><a class="reference internal" href="#line-chart" id="id4">Line Chart</a></li>
+<li><a class="reference internal" href="#area-chart" id="id5">Area Chart</a></li>
+<li><a class="reference internal" href="#pie-and-donut-charts" id="id6">Pie and Donut Charts</a></li>
+</ul>
+</div>
+<p>You can create an interactive plot making use of the dimple library using the <tt class="xref py py-func docutils literal"><span class="pre">dPlot()</span></tt> function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see <cite>API docs &lt;&gt;</cite>.  For more examples, see &lt;<cite>Dimple gallery &lt;http://timelyportfolio.github.io/rCharts_dimple/gallery&gt;</cite>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x</td>
+<td>formula or string</td>
+<td>formula y ~ x or string x = &#8220;&#8221; or x=c(&#8220;&#8221;,&#8221;&#8221;,..) with column names from the data frame</td>
+</tr>
+<tr class="row-odd"><td>y</td>
+<td>string or strings</td>
+<td>y = &#8220;&#8221; or y = c(&#8220;&#8221;,&#8221;&#8221;,...) with column names from the data frame</td>
+</tr>
+<tr class="row-even"><td>z</td>
+<td>string</td>
+<td>z = &#8220;&#8221; with column names from the data frame</td>
+</tr>
+<tr class="row-odd"><td>groups</td>
+<td>string or strings</td>
+<td>groups = &#8220;&#8221; or groups = c(&#8220;&#8221;,&#8221;&#8221;,...)</td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td>data frame</td>
+<td>A data frame containing the data to be plotted</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>string</td>
+<td>The type of chart to plot</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="scatter-bubble-chart">
+<h2><a class="toc-backref" href="#id1">Scatter/bubble Chart</a><a class="headerlink" href="#scatter-bubble-chart" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre><span class="c1">#rownames in data.frames are not provided with toJSON</span>
+<span class="c1">#add names as a column</span>
+mtcars.df <span class="o">&lt;-</span> data.frame<span class="p">(</span> car <span class="o">=</span> rownames<span class="p">(</span>mtcars<span class="p">),</span> mtcars <span class="p">)</span>
+p1 <span class="o">&lt;-</span> dPlot<span class="p">(</span>mpg <span class="o">~</span> wt<span class="p">,</span> groups <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;car&quot;</span><span class="p">,</span><span class="s">&quot;cyl&quot;</span><span class="p">),</span> data <span class="o">=</span> mtcars.df<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;bubble&#39;</span><span class="p">)</span>
+<span class="c1">#by default dimple rCharts will assign x as a categorical/discrete axis</span>
+<span class="c1"># and y as a measure/continuous axis</span>
+<span class="c1"># easily changed as shown in the next step</span>
+p1<span class="o">$</span>xAxis<span class="p">(</span> type <span class="o">=</span> <span class="s">&quot;addMeasureAxis&quot;</span> <span class="p">)</span>
+p1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/dimple-scatter.html
+' scrolling='no' seamless
+class='rChart dimple '
+id=iframe-
+chart2f8028613ba0
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=dimple-scatter" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/dimple-scatter.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="bar-chart">
+<h2><a class="toc-backref" href="#id2">Bar Chart</a><a class="headerlink" href="#bar-chart" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>hair_eye <span class="o">=</span> as.data.frame<span class="p">(</span>HairEyeColor<span class="p">)</span>
+p2 <span class="o">&lt;-</span> dPlot<span class="p">(</span>Freq <span class="o">~</span> Hair<span class="p">,</span> groups <span class="o">=</span> <span class="s">&#39;Eye&#39;</span><span class="p">,</span>
+  data <span class="o">=</span> subset<span class="p">(</span>hair_eye<span class="p">,</span> Sex <span class="o">==</span> <span class="s">&quot;Female&quot;</span><span class="p">),</span>
+  type <span class="o">=</span> <span class="s">&#39;bar&#39;</span>
+<span class="p">)</span>
+p2<span class="o">$</span>defaultColors<span class="p">(</span>c<span class="p">(</span><span class="s">&#39;brown&#39;</span><span class="p">,</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;#594c26&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">))</span>
+p2
+</pre></div>
+</div>
+<iframe src='
+../_downloads/dimple-bar.html
+' scrolling='no' seamless
+class='rChart dimple '
+id=iframe-
+chart2f80736b694d
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=dimple-bar" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/dimple-bar.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="bar-horizontal-chart">
+<h2><a class="toc-backref" href="#id3">Bar Horizontal Chart</a><a class="headerlink" href="#bar-horizontal-chart" title="Permalink to this headline">¶</a></h2>
+<iframe src='
+../_downloads/dimple-bar-horizontal.html
+' scrolling='no' seamless
+class='rChart dimple '
+id=iframe-
+chart2f80cd618c
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=dimple-bar-horizontal" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/dimple-bar-horizontal.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="line-chart">
+<h2><a class="toc-backref" href="#id4">Line Chart</a><a class="headerlink" href="#line-chart" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>data<span class="p">(</span>economics<span class="p">,</span> package <span class="o">=</span> <span class="s">&#39;ggplot2&#39;</span><span class="p">)</span>
+<span class="c1">#dimple supports a time axis</span>
+<span class="c1">#for that we need dimple in a d3 date format</span>
+economics<span class="o">$</span>date <span class="o">&lt;-</span> format<span class="p">(</span>economics<span class="o">$</span>date<span class="p">,</span> <span class="s">&quot;%Y-%m-%d&quot;</span><span class="p">)</span>
+p6 <span class="o">&lt;-</span> dPlot<span class="p">(</span>uempmed <span class="o">~</span> date<span class="p">,</span> data <span class="o">=</span> economics<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;line&#39;</span><span class="p">)</span>
+<span class="c1">#here is how we tell dimple the input and output format of the date</span>
+p6<span class="o">$</span>xAxis<span class="p">(</span>
+  type <span class="o">=</span> <span class="s">&quot;addTimeAxis&quot;</span><span class="p">,</span>
+  inputFormat <span class="o">=</span> <span class="s">&quot;%Y-%m-%d&quot;</span><span class="p">,</span>
+  outputFormat <span class="o">=</span> <span class="s">&quot;%b %Y&quot;</span>
+<span class="p">)</span>
+p6
+</pre></div>
+</div>
+<iframe src='
+../_downloads/dimple-line.html
+' scrolling='no' seamless
+class='rChart dimple '
+id=iframe-
+chart2f80528f77aa
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=dimple-line" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/dimple-line.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="area-chart">
+<h2><a class="toc-backref" href="#id5">Area Chart</a><a class="headerlink" href="#area-chart" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-r"><div class="highlight"><pre>dat <span class="o">&lt;-</span> data.frame<span class="p">(</span>
+  t <span class="o">=</span> rep<span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">23</span><span class="p">,</span> each <span class="o">=</span> <span class="m">4</span><span class="p">),</span>
+  var <span class="o">=</span> rep<span class="p">(</span>LETTERS<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="m">4</span><span class="p">),</span>
+  val <span class="o">=</span> round<span class="p">(</span>runif<span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">24</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">50</span><span class="p">))</span>
+<span class="p">)</span>
+p8 <span class="o">&lt;-</span> dPlot<span class="p">(</span>val <span class="o">~</span> t<span class="p">,</span> groups <span class="o">=</span>  <span class="s">&#39;var&#39;</span><span class="p">,</span> data <span class="o">=</span> dat<span class="p">,</span>
+ type <span class="o">=</span> <span class="s">&#39;area&#39;</span>
+<span class="p">)</span>
+p8
+</pre></div>
+</div>
+<iframe src='
+../_downloads/dimple-area.html
+' scrolling='no' seamless
+class='rChart dimple '
+id=iframe-
+chart2f801fca3ada
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><a href="../playground.html#?n=dimple-area" class="btn btn-success btn-mini float-right" target="_blank">
+  <span class="fa fa-edit"></span> Edit
+</a><br/><p><a class="reference download internal" href="../_downloads/dimple-area.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="pie-and-donut-charts">
+<h2><a class="toc-backref" href="#id6">Pie and Donut Charts</a><a class="headerlink" href="#pie-and-donut-charts" title="Permalink to this headline">¶</a></h2>
+<p>Pie and donut charts are not currently provided in dimple (see <cite>issue &lt;_https://github.com/PMSI-AlignAlytics/dimple/issues/47&gt;</cite>) .</p>
+<br/><br/>
+<style>
+  iframe.rChart{margin-bottom: 20px;}
+  a.download{display: none;}
+  a.button{color: black;}
+  #rickshaw iframe.rChart{height: 450px;}</style>
+</style></div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="dimple"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

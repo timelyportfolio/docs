@@ -1,0 +1,210 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://dimplejs.org/dist/dimple.v1.1.5.min.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 700px;
+      height: 390px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart2f8028613ba0' class = 'rChart dimple'></div>    
+    <script type="text/javascript">
+  var opts = {
+ "dom": "chart2f8028613ba0",
+"width":    700,
+"height":    390,
+"xAxis": {
+ "type": "addMeasureAxis",
+"showPercent": false 
+},
+"yAxis": {
+ "type": "addMeasureAxis",
+"showPercent": false 
+},
+"zAxis": [],
+"colorAxis": [],
+"defaultColors": [],
+"layers": [],
+"legend": [],
+"x": "wt",
+"y": "mpg",
+"groups": [ "car", "cyl" ],
+"type": "bubble",
+"id": "chart2f8028613ba0" 
+},
+    data = [{"car":"Mazda RX4","mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,"wt":2.62,"qsec":16.46,"vs":0,"am":1,"gear":4,"carb":4},{"car":"Mazda RX4 Wag","mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,"wt":2.875,"qsec":17.02,"vs":0,"am":1,"gear":4,"carb":4},{"car":"Datsun 710","mpg":22.8,"cyl":4,"disp":108,"hp":93,"drat":3.85,"wt":2.32,"qsec":18.61,"vs":1,"am":1,"gear":4,"carb":1},{"car":"Hornet 4 Drive","mpg":21.4,"cyl":6,"disp":258,"hp":110,"drat":3.08,"wt":3.215,"qsec":19.44,"vs":1,"am":0,"gear":3,"carb":1},{"car":"Hornet Sportabout","mpg":18.7,"cyl":8,"disp":360,"hp":175,"drat":3.15,"wt":3.44,"qsec":17.02,"vs":0,"am":0,"gear":3,"carb":2},{"car":"Valiant","mpg":18.1,"cyl":6,"disp":225,"hp":105,"drat":2.76,"wt":3.46,"qsec":20.22,"vs":1,"am":0,"gear":3,"carb":1},{"car":"Duster 360","mpg":14.3,"cyl":8,"disp":360,"hp":245,"drat":3.21,"wt":3.57,"qsec":15.84,"vs":0,"am":0,"gear":3,"carb":4},{"car":"Merc 240D","mpg":24.4,"cyl":4,"disp":146.7,"hp":62,"drat":3.69,"wt":3.19,"qsec":20,"vs":1,"am":0,"gear":4,"carb":2},{"car":"Merc 230","mpg":22.8,"cyl":4,"disp":140.8,"hp":95,"drat":3.92,"wt":3.15,"qsec":22.9,"vs":1,"am":0,"gear":4,"carb":2},{"car":"Merc 280","mpg":19.2,"cyl":6,"disp":167.6,"hp":123,"drat":3.92,"wt":3.44,"qsec":18.3,"vs":1,"am":0,"gear":4,"carb":4},{"car":"Merc 280C","mpg":17.8,"cyl":6,"disp":167.6,"hp":123,"drat":3.92,"wt":3.44,"qsec":18.9,"vs":1,"am":0,"gear":4,"carb":4},{"car":"Merc 450SE","mpg":16.4,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":4.07,"qsec":17.4,"vs":0,"am":0,"gear":3,"carb":3},{"car":"Merc 450SL","mpg":17.3,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":3.73,"qsec":17.6,"vs":0,"am":0,"gear":3,"carb":3},{"car":"Merc 450SLC","mpg":15.2,"cyl":8,"disp":275.8,"hp":180,"drat":3.07,"wt":3.78,"qsec":18,"vs":0,"am":0,"gear":3,"carb":3},{"car":"Cadillac Fleetwood","mpg":10.4,"cyl":8,"disp":472,"hp":205,"drat":2.93,"wt":5.25,"qsec":17.98,"vs":0,"am":0,"gear":3,"carb":4},{"car":"Lincoln Continental","mpg":10.4,"cyl":8,"disp":460,"hp":215,"drat":3,"wt":5.424,"qsec":17.82,"vs":0,"am":0,"gear":3,"carb":4},{"car":"Chrysler Imperial","mpg":14.7,"cyl":8,"disp":440,"hp":230,"drat":3.23,"wt":5.345,"qsec":17.42,"vs":0,"am":0,"gear":3,"carb":4},{"car":"Fiat 128","mpg":32.4,"cyl":4,"disp":78.7,"hp":66,"drat":4.08,"wt":2.2,"qsec":19.47,"vs":1,"am":1,"gear":4,"carb":1},{"car":"Honda Civic","mpg":30.4,"cyl":4,"disp":75.7,"hp":52,"drat":4.93,"wt":1.615,"qsec":18.52,"vs":1,"am":1,"gear":4,"carb":2},{"car":"Toyota Corolla","mpg":33.9,"cyl":4,"disp":71.1,"hp":65,"drat":4.22,"wt":1.835,"qsec":19.9,"vs":1,"am":1,"gear":4,"carb":1},{"car":"Toyota Corona","mpg":21.5,"cyl":4,"disp":120.1,"hp":97,"drat":3.7,"wt":2.465,"qsec":20.01,"vs":1,"am":0,"gear":3,"carb":1},{"car":"Dodge Challenger","mpg":15.5,"cyl":8,"disp":318,"hp":150,"drat":2.76,"wt":3.52,"qsec":16.87,"vs":0,"am":0,"gear":3,"carb":2},{"car":"AMC Javelin","mpg":15.2,"cyl":8,"disp":304,"hp":150,"drat":3.15,"wt":3.435,"qsec":17.3,"vs":0,"am":0,"gear":3,"carb":2},{"car":"Camaro Z28","mpg":13.3,"cyl":8,"disp":350,"hp":245,"drat":3.73,"wt":3.84,"qsec":15.41,"vs":0,"am":0,"gear":3,"carb":4},{"car":"Pontiac Firebird","mpg":19.2,"cyl":8,"disp":400,"hp":175,"drat":3.08,"wt":3.845,"qsec":17.05,"vs":0,"am":0,"gear":3,"carb":2},{"car":"Fiat X1-9","mpg":27.3,"cyl":4,"disp":79,"hp":66,"drat":4.08,"wt":1.935,"qsec":18.9,"vs":1,"am":1,"gear":4,"carb":1},{"car":"Porsche 914-2","mpg":26,"cyl":4,"disp":120.3,"hp":91,"drat":4.43,"wt":2.14,"qsec":16.7,"vs":0,"am":1,"gear":5,"carb":2},{"car":"Lotus Europa","mpg":30.4,"cyl":4,"disp":95.1,"hp":113,"drat":3.77,"wt":1.513,"qsec":16.9,"vs":1,"am":1,"gear":5,"carb":2},{"car":"Ford Pantera L","mpg":15.8,"cyl":8,"disp":351,"hp":264,"drat":4.22,"wt":3.17,"qsec":14.5,"vs":0,"am":1,"gear":5,"carb":4},{"car":"Ferrari Dino","mpg":19.7,"cyl":6,"disp":145,"hp":175,"drat":3.62,"wt":2.77,"qsec":15.5,"vs":0,"am":1,"gear":5,"carb":6},{"car":"Maserati Bora","mpg":15,"cyl":8,"disp":301,"hp":335,"drat":3.54,"wt":3.57,"qsec":14.6,"vs":0,"am":1,"gear":5,"carb":8},{"car":"Volvo 142E","mpg":21.4,"cyl":4,"disp":121,"hp":109,"drat":4.11,"wt":2.78,"qsec":18.6,"vs":1,"am":1,"gear":4,"carb":2}];
+  var svg = dimple.newSvg("#" + opts.id, opts.width, opts.height);
+
+  //data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
+  var myChart = new dimple.chart(svg, data);
+  if (opts.bounds) {
+    myChart.setBounds(opts.bounds.x, opts.bounds.y, opts.bounds.width, opts.bounds.height);//myChart.setBounds(80, 30, 480, 330);
+  }
+  //dimple allows use of custom CSS with noFormats
+  if(opts.noFormats) { myChart.noFormats = opts.noFormats; };
+  //for markimekko and addAxis also have third parameter measure
+  //so need to evaluate if measure provided
+  
+  //function to build axes
+  function buildAxis(position,layer){
+    var axis;
+    var axisopts = opts[position+"Axis"];
+    
+    if(axisopts.measure) {
+      axis = myChart[axisopts.type](position,layer[position],axisopts.measure);
+    } else {
+      axis = myChart[axisopts.type](position, layer[position]);
+    };
+    if(!(axisopts.type === "addPctAxis")) axis.showPercent = axisopts.showPercent;
+    if (axisopts.orderRule) axis.addOrderRule(axisopts.orderRule);
+    if (axisopts.grouporderRule) axis.addGroupOrderRule(axisopts.grouporderRule);  
+    if (axisopts.overrideMin) axis.overrideMin = axisopts.overrideMin;
+    if (axisopts.overrideMax) axis.overrideMax = axisopts.overrideMax;
+    if (axisopts.overrideMax) axis.overrideMax = axisopts.overrideMax;
+    if (axisopts.inputFormat) axis.dateParseFormat = axisopts.inputFormat;
+    if (axisopts.outputFormat) axis.tickFormat = axisopts.outputFormat;    
+    return axis;
+  };
+  
+  var c = null;
+  if(d3.keys(opts.colorAxis).length > 0) {
+    c = myChart[opts.colorAxis.type](opts.colorAxis.colorSeries,opts.colorAxis.palette) ;
+  }
+  
+  //allow manipulation of default colors to use with dimple
+  if(opts.defaultColors.length) {
+    opts.defaultColors = opts.defaultColors[0];
+    if (typeof(opts.defaultColors) == "function") {
+      //assume this is a d3 scale
+      //for now loop through first 20 but need a better way to handle
+      defaultColorsArray = [];
+      for (var n=0;n<20;n++) {
+        defaultColorsArray.push(opts.defaultColors(n));
+      };
+      opts.defaultColors = defaultColorsArray;
+    }
+    opts.defaultColors.forEach(function(d,i) {
+      opts.defaultColors[i] = new dimple.color(d);
+    })
+    myChart.defaultColors = opts.defaultColors;
+  }  
+  
+  //do series
+  //set up a function since same for each
+  //as of now we have x,y,groups,data,type in opts for primary layer
+  //and other layers reside in opts.layers
+  function buildSeries(layer, hidden){
+    //inherit from primary layer if not intentionally changed or xAxis, yAxis, zAxis null
+    if (!layer.xAxis) layer.xAxis = opts.xAxis;    
+    if (!layer.yAxis) layer.yAxis = opts.yAxis;
+    if (!layer.zAxis) layer.zAxis = opts.zAxis;
+    
+    var x = buildAxis("x", layer);
+    x.hidden = hidden;
+    
+    var y = buildAxis("y", layer);
+    y.hidden = hidden;
+    
+    //z for bubbles
+    var z = null;
+    if (!(typeof(layer.zAxis) === 'undefined') && layer.zAxis.type){
+      z = buildAxis("z", layer);
+    };
+    
+    //here think I need to evaluate group and if missing do null
+    //as the group argument
+    //if provided need to use groups from layer
+    var s = new dimple.series(myChart, null, x, y, z, c, dimple.plot[layer.type], dimple.aggregateMethod.avg, dimple.plot[layer.type].stacked);
+    
+    //as of v1.1.4 dimple can use different dataset for each series
+    if(layer.data){
+      //convert to an array of objects
+      var tempdata;
+      //avoid lodash for now
+      datakeys = d3.keys(layer.data)
+      tempdata = layer.data[datakeys[1]].map(function(d,i){
+        var tempobj = {}
+        datakeys.forEach(function(key){
+          tempobj[key] = layer.data[key][i]
+        })
+        return tempobj
+      })
+      s.data = tempdata;
+    }
+    
+    if(layer.hasOwnProperty("groups")) {
+      s.categoryFields = (typeof layer.groups === "object") ? layer.groups : [layer.groups];
+      //series offers an aggregate method that we will also need to check if available
+      //options available are avg, count, max, min, sum
+      if (!(typeof(layer.aggregate) === 'undefined')) {
+        s.aggregate = eval(layer.aggregate);
+      }
+      if (!(typeof(layer.lineWeight) === 'undefined')) {
+        s.lineWeight = eval(layer.lineWeight);
+      }
+      if (!(typeof(layer.barGap) === 'undefined')) {
+        s.barGap = eval(layer.barGap);
+      }    
+    };    
+   /* if (!(typeof(layer.eventHandler) === 'undefined')) {
+      layer.eventHandler = (layer.eventHandler.length === "undefined") ? layer.eventHandler : [layer.eventHandler];
+      layer.eventHandler.forEach(function(evt){
+        s.addEventHandler(evt.event, eval(evt.handler))
+      })
+    }*/
+      
+    myChart.series.push(s);
+    
+    /*placeholder fix domain of primary scale for new series data
+    //not working right now but something like this
+    //for now just use overrideMin and overrideMax from rCharts
+    for( var i = 0; i<2; i++) {
+      if (!myChart.axes[i].overrideMin) {
+        myChart.series[0]._axisBounds(i==0?"x":"y").min = myChart.series[0]._axisBounds(i==0?"x":"y").min < s._axisBounds(i==0?"x":"y").min ? myChart.series[0]._axisBounds(i==0?"x":"y").min : s._axisBounds(i==0?"x":"y").min;
+      }
+      if (!myChart.axes[i].overrideMax) {  
+        myChart.series[0]._axisBounds(i==0?"x":"y")._max = myChart.series[0]._axisBounds(i==0?"x":"y").max > s._axisBounds(i==0?"x":"y").max ? myChart.series[0]._axisBounds(i==0?"x":"y").max : s._axisBounds(i==0?"x":"y").max;
+      }
+      myChart.axes[i]._update();
+    }
+    */
+    
+    return s;
+  };
+  
+  buildSeries(opts, false);
+  if (opts.layers.length > 0) {
+    opts.layers.forEach(function(layer){
+      buildSeries(layer, true);
+    })
+  }
+  //unsure if this is best but if legend is provided (not empty) then evaluate
+  if(d3.keys(opts.legend).length > 0) {
+    var l =myChart.addLegend();
+    d3.keys(opts.legend).forEach(function(d){
+      l[d] = opts.legend[d];
+    });
+  }
+  //quick way to get this going but need to make this cleaner
+  if(opts.storyboard) {
+    myChart.setStoryboard(opts.storyboard);
+  };
+  myChart.draw();
+
+</script>
+    
+    <script></script>    
+  </body>
+</html>

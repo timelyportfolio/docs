@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Share &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Libraries" href="../libraries/index.html"/>
+        <link rel="prev" title="Create" href="create.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="create.html">Create</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Share</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/intro/share.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="share">
+<span id="id1"></span><h1>Share<a class="headerlink" href="#share" title="Permalink to this headline">¶</a></h1>
+<p>Any visualization is useful only when you are able to share it. rCharts
+tries to make it really easy to share the visualizations you create. Let
+us first create a simple interactive scatterplot to illustrate the
+different sharing mechanisms built into rCharts</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#save" id="id3">Save</a></li>
+<li><a class="reference internal" href="#publish" id="id4">Publish</a></li>
+<li><a class="reference internal" href="#embed" id="id5">Embed</a></li>
+</ul>
+</div>
+<div class="highlight-r"><div class="highlight"><pre>library<span class="p">(</span>rCharts<span class="p">)</span>
+r1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>mpg <span class="o">~</span> wt<span class="p">,</span> data <span class="o">=</span> mtcars<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="save">
+<h2><a class="toc-backref" href="#id3">Save</a><a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h2>
+<p>You can save your chart using the <tt class="docutils literal"><span class="pre">save</span></tt> method. The additional
+parameters passed to the <tt class="docutils literal"><span class="pre">save</span></tt> method determine how the js/css assets
+of the javascript visualization library are served. You can now email
+your visualization or embed it in a blog post as an iframe.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="c1"># link js/css assets from an online cdn</span>
+r1<span class="o">$</span>save<span class="p">(</span><span class="s">&#39;mychart1.html&#39;</span><span class="p">,</span> cdn <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1"># create standalone chart with all assets included directly in the html file</span>
+r1<span class="o">$</span>save<span class="p">(</span><span class="s">&#39;mychart2.html&#39;</span><span class="p">,</span> standalone <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="publish">
+<h2><a class="toc-backref" href="#id4">Publish</a><a class="headerlink" href="#publish" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, you may want to directly publish the visualization you
+created, without having to bother with the steps of saving it and then
+uploading it. rChart has you covered here, and provides a <tt class="docutils literal"><span class="pre">publish</span></tt>
+method that combines these two steps. It currently supports publishing
+to <a class="reference external" href="http://rpubs.com">RPubs</a> and <a class="reference external" href="http://gist.github.com">Gist</a> and I expect to add more providers over
+time.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="c1"># the host defaults to &#39;gist&#39;</span>
+r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&quot;My Chart&quot;</span><span class="p">)</span>
+r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&quot;My Chart&quot;</span><span class="p">,</span> host <span class="o">=</span> <span class="s">&#39;rpubs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Publishing a chart saves the html in a temporary file, uploads it to the
+specified <tt class="docutils literal"><span class="pre">host</span></tt>, and returns a link to where the chart can be viewed.
+There are many gist viewers out there, and rCharts uses a custom viewer
+<a class="reference external" href="http://rcharts.io/viewer">http://rcharts.io/viewer</a>, designed specifically for rCharts, and is a
+modified version of another excellent gist viewer
+<a class="reference external" href="http://www.pagist.info/">http://www.pagist.info/</a>. Another popular gist viewer is
+<a class="reference external" href="http://blocks.org">http://blocks.org</a>, built by Mike Bostock, the creator of
+<a class="reference external" href="http://d3js.org">d3.js</a>.</p>
+<p>If you wish to simply <strong>update</strong> a visualization you have already
+created and shared, you can pass the gist/rpubs id to the <tt class="docutils literal"><span class="pre">publish</span></tt>
+method, and it will update instead of uploading it as a brand new chart.</p>
+<div class="highlight-r"><div class="highlight"><pre>r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&quot;My Chart&quot;</span><span class="p">,</span> id <span class="o">=</span> <span class="m">9253202</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While using a provider like <a class="reference external" href="http://gist.github.com">Gist</a> that
+allows multiple files to be uploaded, you can use the <tt class="docutils literal"><span class="pre">extras</span></tt>
+argument to add additional files that you want to upload. This is
+especially useful, if you want to provide a <tt class="docutils literal"><span class="pre">README.md</span></tt> or upload
+external assets like js/css/json files that are required for your chart
+to render.</p>
+<div class="highlight-r"><div class="highlight"><pre>r1<span class="o">$</span>publish<span class="p">(</span><span class="s">&quot;My Chart&quot;</span><span class="p">,</span> id <span class="o">=</span> <span class="m">9253202</span><span class="p">,</span> extras <span class="o">=</span> <span class="s">&quot;README.md&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="embed">
+<h2><a class="toc-backref" href="#id5">Embed</a><a class="headerlink" href="#embed" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rmarkdown">
+<h3>RMarkdown<a class="headerlink" href="#rmarkdown" title="Permalink to this headline">¶</a></h3>
+<p>Suppose you wish to embed a visualization created using rCharts in an
+<a class="reference external" href="https://www.rstudio.com/ide/docs/r_markdown">Rmd</a> document.</p>
+<p><strong>IFrame</strong></p>
+<p>One way to do this would be to use the <tt class="docutils literal"><span class="pre">save</span></tt> method to save the
+chart, and then embed it as an iframe. rCharts saves you the steps by
+allowing you to use the <tt class="docutils literal"><span class="pre">show</span></tt> method and specify that you want the
+chart to be embedded as an <tt class="docutils literal"><span class="pre">iframe</span></tt>.</p>
+<p>We need to set the chunk options <tt class="docutils literal"><span class="pre">comment</span> <span class="pre">=</span> <span class="pre">NA</span></tt> and
+<tt class="docutils literal"><span class="pre">results</span> <span class="pre">=</span> <span class="pre">&quot;asis&quot;</span></tt> so that the resulting html is rendered asis and not
+marked up (which is the default in knitr).</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="sb">``</span>`<span class="p">{</span>r results <span class="o">=</span> <span class="s">&quot;asis&quot;</span><span class="p">,</span> comment <span class="o">=</span> <span class="kc">NA</span><span class="p">}</span>
+r1<span class="o">$</span>show<span class="p">(</span><span class="s">&#39;iframe&#39;</span><span class="p">,</span> cdn <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="sb">``</span>`
+</pre></div>
+</div>
+<p>If you have several charts in your Rmd document, you can set these
+options globally in a setup chunk. Make sure to set <tt class="docutils literal"><span class="pre">cache</span> <span class="pre">=</span> <span class="pre">F</span></tt> for
+this chunk so that it is always run.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="sb">``</span>`<span class="p">{</span>r setup<span class="p">,</span> cache <span class="o">=</span> <span class="k-Variable">F</span><span class="p">}</span>
+options<span class="p">(</span>rcharts.mode <span class="o">=</span> <span class="s">&#39;iframe&#39;</span><span class="p">,</span> rcharts.cdn <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+knitr<span class="o">::</span>opts_chunk<span class="o">$</span>set<span class="p">(</span>results <span class="o">=</span> <span class="s">&quot;asis&quot;</span><span class="p">,</span> comment <span class="o">=</span> <span class="kc">NA</span><span class="p">)</span>
+<span class="sb">``</span>`
+</pre></div>
+</div>
+<p>You can now rewrite the earlier sourcecode chunk simply as</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="sb">``</span>`<span class="p">{</span>r<span class="p">}</span>
+r1
+<span class="sb">``</span>`
+</pre></div>
+</div>
+<p>I prefer this style when writing, since it allows a user to simply copy
+paste sourcecode from the html and run it in their R console.</p>
+<p><strong>IFrame Inline</strong></p>
+<p>The <tt class="docutils literal"><span class="pre">iframe</span></tt> mode requires users to upload the additional chart html
+files along with their document. This introduces additional steps, and
+in the case of some providers like Rpubs, is not even possible. Hence,
+rCharts provides an additional mode named <tt class="docutils literal"><span class="pre">iframesrc</span></tt> that embeds the
+chart as an inline iframe, which makes your document self contained.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="sb">``</span>`<span class="p">{</span>r results <span class="o">=</span> <span class="s">&quot;asis&quot;</span><span class="p">,</span> comment <span class="o">=</span> <span class="kc">NA</span><span class="p">}</span>
+r1<span class="o">$</span>show<span class="p">(</span><span class="s">&#39;iframesrc&#39;</span><span class="p">,</span> cdn  <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="sb">``</span>`
+</pre></div>
+</div>
+<p>This option has the advantage of keeping the html standalone, but
+isolating the chart from the html on the page, thereby avoiding css and
+js conflicts. However, this feature is <a class="reference external" href="http://www.w3schools.com/tags/att_iframe_srcdoc.asp">not supported by IE and
+Opera</a>.</p>
+<p><strong>Inline</strong></p>
+<p>A third option to embed an rCharts created visualization is to inline
+the chart directly. Note that you need to add <tt class="docutils literal"><span class="pre">include_assets</span> <span class="pre">=</span> <span class="pre">TRUE</span></tt>,
+only the first time you are creating a chart using a specific library.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="sb">``</span>`<span class="p">{</span>r chart3<span class="p">}</span>
+r1<span class="o">$</span>show<span class="p">(</span><span class="s">&#39;inline&#39;</span><span class="p">,</span> include_assets <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> cdn <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="sb">``</span>`
+</pre></div>
+</div>
+<p>This approach should work in all browsers, however, it is susceptible to
+css and js conflicts.</p>
+<p>If you are using <a class="reference external" href="http://slidify.github.io">Slidify</a> to author your Rmd, then you can specify the charting library as <tt class="docutils literal"><span class="pre">ext_widgets</span></tt> in the YAML front matter. Here is a minimal reproducible example.</p>
+<p>Note how you did not have to specify <tt class="docutils literal"><span class="pre">include_assets</span> <span class="pre">=</span> <span class="pre">TRUE</span></tt>. This is because slidify uses the <tt class="docutils literal"><span class="pre">ext_widgets</span></tt> property to automatically pick up the required assets and include them in the header of the resulting html page.</p>
+</div>
+<div class="section" id="shiny">
+<h3>Shiny<a class="headerlink" href="#shiny" title="Permalink to this headline">¶</a></h3>
+<p>It is easy to embed visualizations created using rCharts into a <a class="reference external" href="http://rstudio.com/shiny">Shiny</a> application. The main idea is to make use of the utility functions <tt class="xref py py-func docutils literal"><span class="pre">renderChart()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">showOutput()</span></tt>. The shiny application created using the code below, can be seen <a class="reference external" href="http://glimmer.rstudio.com/rChartsApp">here</a></p>
+<div class="highlight-r"><div class="highlight"><pre> <span class="c1">## server.r</span>
+ require<span class="p">(</span>rCharts<span class="p">)</span>
+ shinyServer<span class="p">(</span><span class="kr">function</span><span class="p">(</span>input<span class="p">,</span> output<span class="p">)</span> <span class="p">{</span>
+<span class="hll">   output<span class="o">$</span>myChart <span class="o">&lt;-</span> renderChart<span class="p">({</span>
+</span>     names<span class="p">(</span>iris<span class="p">)</span> <span class="o">=</span> gsub<span class="p">(</span><span class="s">&quot;\\.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> names<span class="p">(</span>iris<span class="p">))</span>
+     p1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>input<span class="o">$</span>x<span class="p">,</span> input<span class="o">$</span>y<span class="p">,</span> data <span class="o">=</span> iris<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Species&quot;</span><span class="p">,</span>
+       facet <span class="o">=</span> <span class="s">&quot;Species&quot;</span><span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;point&#39;</span><span class="p">)</span>
+     p1<span class="o">$</span>addParams<span class="p">(</span>dom <span class="o">=</span> <span class="s">&#39;myChart&#39;</span><span class="p">)</span>
+     <span class="kr">return</span><span class="p">(</span>p1<span class="p">)</span>
+   <span class="p">})</span>
+ <span class="p">})</span>
+
+ <span class="c1">## ui.R</span>
+ require<span class="p">(</span>rCharts<span class="p">)</span>
+ shinyUI<span class="p">(</span>pageWithSidebar<span class="p">(</span>
+   headerPanel<span class="p">(</span><span class="s">&quot;rCharts: Interactive Charts from R using polychart.js&quot;</span><span class="p">),</span>
+
+   sidebarPanel<span class="p">(</span>
+     selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;x&quot;</span><span class="p">,</span>
+      label <span class="o">=</span> <span class="s">&quot;Choose X&quot;</span><span class="p">,</span>
+      choices <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;SepalLength&#39;</span><span class="p">,</span> <span class="s">&#39;SepalWidth&#39;</span><span class="p">,</span> <span class="s">&#39;PetalLength&#39;</span><span class="p">,</span> <span class="s">&#39;PetalWidth&#39;</span><span class="p">),</span>
+      selected <span class="o">=</span> <span class="s">&quot;SepalLength&quot;</span><span class="p">),</span>
+     selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">,</span>
+       label <span class="o">=</span> <span class="s">&quot;Choose Y&quot;</span><span class="p">,</span>
+       choices <span class="o">=</span> c<span class="p">(</span><span class="s">&#39;SepalLength&#39;</span><span class="p">,</span> <span class="s">&#39;SepalWidth&#39;</span><span class="p">,</span> <span class="s">&#39;PetalLength&#39;</span><span class="p">,</span> <span class="s">&#39;PetalWidth&#39;</span><span class="p">),</span>
+       selected <span class="o">=</span> <span class="s">&quot;SepalWidth&quot;</span><span class="p">)</span>
+   <span class="p">),</span>
+   mainPanel<span class="p">(</span>
+<span class="hll">     showOutput<span class="p">(</span><span class="s">&quot;myChart&quot;</span><span class="p">,</span> <span class="s">&quot;polycharts&quot;</span><span class="p">)</span>
+</span>   <span class="p">)</span>
+ <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../libraries/index.html" class="btn btn-neutral float-right" title="Libraries">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create.html" class="btn btn-neutral" title="Create"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

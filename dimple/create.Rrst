@@ -7,14 +7,14 @@ Create
 
    <style>iframe.rChart{margin-bottom: 20px;}</style>
 
-The `NVD3 <http://nvd3.org>`_ library supports most of the common chart types. 
+The `dimple <http://dimplejs.org>`_ library supports most of the common chart types. 
 
 .. contents::
    :local:
    :depth: 1
 
 
-You can create an interactive plot making use of the NVD3 library using the :func:`nPlot` function.
+You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see `API docs <>`.  For more examples, see <`Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`.
 
 .. list-table:: 
     :widths: 25 25 70
@@ -24,17 +24,23 @@ You can create an interactive plot making use of the NVD3 library using the :fun
       - Type
       - Description
     * - x
-      - formula
-      - A formula of the form y \~ x, with column names from the data frame.
+      - formula or string
+      - formula y \~ x or string x = "" or x=c("","",..) with column names from the data frame
+    * - y
+      - string or strings
+      - y = "" or y = c("","",...) with column names from the data frame
+    * - z
+      - string
+      - z = "" with column names from the data frame
+    * - groups
+      - string or strings
+      - groups = "" or groups = c("","",...)
     * - data
       - data frame
       - A data frame containing the data to be plotted
     * - type
       - string
       - The type of chart to plot
-    * - group
-      - string
-      - Name of column based on which data should be grouped.
 
 
 
@@ -44,174 +50,133 @@ options(
   rcharts.mode = 'iframe', 
   rcharts.cdn = TRUE,
   RCHART_WIDTH = 700,
-  RCHART_HEIGHT = 450
+  RCHART_HEIGHT = 390
 )
 library(knitr)
 opts_chunk$set(tidy = F, results = 'asis', comment = NA, results = 'html')
 ```
 
 
-Scatter Chart
+Scatter/bubble Chart
 --------------
 
-```{r nvd3-scatter}
-p1 <- nPlot(mpg ~ wt, group = 'cyl', data = mtcars, type = 'scatterChart')
-p1$xAxis(axisLabel = 'Weight')
+```{r dimple-scatter}
+#rownames in data.frames are not provided with toJSON
+#add names as a column
+mtcars.df <- data.frame( car = rownames(mtcars), mtcars )
+p1 <- dPlot(mpg ~ wt, groups = c("car","cyl"), data = mtcars.df, type = 'bubble')
+#by default dimple rCharts will assign x as a categorical/discrete axis
+# and y as a measure/continuous axis
+# easily changed as shown in the next step
+p1$xAxis( type = "addMeasureAxis" )
 p1
 ```
 
 ```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-scatter')
+make_edit_button('dimple-scatter')
 ```
 
-:download:`Standalone <_downloads/nvd3-scatter.html>`
+:download:`Standalone <_downloads/dimple-scatter.html>`
 
-Multibar Chart
+Bar Chart
 --------------
 
-```{r nvd3-multibar}
+```{r dimple-bar}
 hair_eye = as.data.frame(HairEyeColor)
-p2 <- nPlot(Freq ~ Hair, group = 'Eye', 
+p2 <- dPlot(Freq ~ Hair, groups = 'Eye', 
   data = subset(hair_eye, Sex == "Female"), 
-  type = 'multiBarChart'
+  type = 'bar'
 )
-p2$chart(color = c('brown', 'blue', '#594c26', 'green'))
+p2$defaultColors(c('brown', 'blue', '#594c26', 'green'))
 p2
 ```
 
 ```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-multibar')
+make_edit_button('dimple-bar')
 ```
 
-:download:`Standalone <_downloads/nvd3-multibar.html>`
+:download:`Standalone <_downloads/dimple-bar.html>`
 
 
-Multibar Horizontal Chart
+Bar Horizontal Chart
 -------------------------
 
-```{r nvd3-multibar-horizontal, echo = F}
-p3 <- nPlot(~ cyl, group = 'gear', data = mtcars, type = 'multiBarHorizontalChart')
-p3$chart(showControls = F)
+```{r dimple-bar-horizontal, echo = F}
+hair_eye = as.data.frame(HairEyeColor)
+#for horizontal bar just switch y and x
+#we can do with formula but let's see it with y = "", x = ""
+#then specify y as categorical and x as a measure
+p3 <- dPlot(x = "Freq", y = "Hair", groups = 'Eye', 
+  data = subset(hair_eye, Sex == "Female"), 
+  type = 'bar'
+)
+#here is how we specify y as categorical and x as measure
+p3$xAxis ( type = "addMeasureAxis" )
+p3$yAxis ( type = "addCategoryAxis" )
+p3$defaultColors(c('brown', 'blue', '#594c26', 'green'))
 p3
 ```
 
 ```{r results = 'asis', echo = F, eval = F}
-latex_image('nvd3-multibar-horizontal')
+latex_image('dimple-bar-horizontal')
 ```
 
 ```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-multibar-horizontal')
+make_edit_button('dimple-bar-horizontal')
 ```
 
-:download:`Standalone <_downloads/nvd3-multibar-horizontal.html>`
-
-Pie Chart
-----------
-
-```{r nvd3-pie}
-p4 <- nPlot(~ cyl, data = mtcars, type = 'pieChart')
-p4
-```
-
-```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-pie')
-```
-
-:download:`Standalone <_downloads/nvd3-pie.html>`
-
-Donut Chart
-------------
-
-```{r nvd3-donut}
-p5 <- nPlot(~ cyl, data = mtcars, type = 'pieChart')
-p5$chart(donut = TRUE)
-p5
-```
-
-```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-donut')
-```
-
-:download:`Standalone <_downloads/nvd3-donut.html>`
+:download:`Standalone <_downloads/dimple-bar-horizontal.html>`
 
 Line Chart
 -----------
 
-```{r nvd3-line}
+```{r dimple-line}
 data(economics, package = 'ggplot2')
-p6 <- nPlot(uempmed ~ date, data = economics, type = 'lineChart')
+#dimple supports a time axis
+#for that we need dimple in a d3 date format
+economics$date <- format(economics$date, "%Y-%m-%d")
+p6 <- dPlot(uempmed ~ date, data = economics, type = 'line')
+#here is how we tell dimple the input and output format of the date
+p6$xAxis( 
+  type = "addTimeAxis",
+  inputFormat = "%Y-%m-%d",
+  outputFormat = "%b %Y" 
+)
 p6
 ```
 
 ```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-line')
+make_edit_button('dimple-line')
 ```
 
-:download:`Standalone <_downloads/nvd3-line.html>`
+:download:`Standalone <_downloads/dimple-line.html>`
 
-Line with Focus Chart
----------------------
-
-```{r nvd3-line-with-focus}
-ecm <- reshape2::melt(
-  economics[,c('date', 'uempmed', 'psavert')], 
-  id = 'date'
-)
-p7 <- nPlot(value ~ date, group = 'variable', 
-  data = ecm, 
-  type = 'lineWithFocusChart'
-)
-p7
-```
-
-```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-line-with-focus')
-```
-
-:download:`Standalone <_downloads/nvd3-line-with-focus.html>`
-
-Stacked Area Chart
+Area Chart
 -------------------
 
-```{r nvd3-stacked-area}
+```{r dimple-area}
 dat <- data.frame(
   t = rep(0:23, each = 4), 
   var = rep(LETTERS[1:4], 4), 
   val = round(runif(4*24,0,50))
 )
-p8 <- nPlot(val ~ t, group =  'var', data = dat, 
- type = 'stackedAreaChart', id = 'chart'
+p8 <- dPlot(val ~ t, groups =  'var', data = dat, 
+ type = 'area'
 )
 p8
 ```
 
 ```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-stacked-area')
+make_edit_button('dimple-area')
 ```
 
-:download:`Standalone <_downloads/nvd3-stacked-area.html>`
+:download:`Standalone <_downloads/dimple-area.html>`
 
-Multi Chart
------------
+Pie and Donut Charts
+----------
 
-```{r nvd3-multi-chart}
-p12 <- nPlot(value ~ date, group = 'variable', data = ecm, type = 'multiChart')
-p12$set(multi = list(
-  uempmed = list(type="area", yAxis=1),
-  psavert = list(type="line", yAxis=2)
-))
-p12$setTemplate(script = system.file(
-  "/libraries/nvd3/layouts/multiChart.html",
-  package = "rCharts"
-))
-p12
-```
+Pie and donut charts are not currently provided in dimple (see `issue <_https://github.com/PMSI-AlignAlytics/dimple/issues/47>`) .
 
-```{r results = 'asis', comment = NA, echo = F}
-make_edit_button('nvd3-multi-chart')
-```
-
-:download:`Standalone <_downloads/nvd3-multi-chart.html>`
 
 
 .. raw:: html

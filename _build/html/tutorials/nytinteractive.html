@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualizing Strikeouts &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Tutorials" href="index.html"/>
+        <link rel="prev" title="Tutorials" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/create.html">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimple/index.html">dimple</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+      
+    <li>Visualizing Strikeouts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/tutorials/nytinteractive.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="visualizing-strikeouts">
+<span id="nytinteractive"></span><h1>Visualizing Strikeouts<a class="headerlink" href="#visualizing-strikeouts" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial explains in detail, how I used <tt class="docutils literal"><span class="pre">rCharts</span></tt> to replicate this NY times <a class="reference external" href="http://www.nytimes.com/interactive/2013/03/29/sports/baseball/Strikeouts-Are-Still-Soaring.html?ref=baseball">interactive graphic</a> on strikeouts in baseball. The end result can be seen <a class="reference external" href="http://glimmer.rstudio.com/ramnathv/strikeouts">here</a> as a <tt class="docutils literal"><span class="pre">shiny</span></tt> application.</p>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to get data on strikeouts by team across years. The NY Times graphic uses data scraped from <a class="reference external" href="http://www.baseball-reference.com/">baseball-reference</a>, using the <tt class="docutils literal"><span class="pre">XML</span></tt> package in R. However, I will be using data from the R package <a class="reference external" href="http://cran.r-project.org/web/packages/Lahman/index.html">Lahman</a>, which provides tables from <a class="reference external" href="http://www.seanlahman.com/baseball-archive/statistics/">Sean Lahman&#8217;s Baseball Database</a> as a set of data frames.</p>
+<p>The data processing step involves using the <a class="reference external" href="http://cran.r-project.org/web/packages/plyr/index.html">plyr</a> package to create two data frames:</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">team_data</span></tt> containing <tt class="docutils literal"><span class="pre">SOG</span></tt> (strikeouts per game) by <tt class="docutils literal"><span class="pre">yearID</span></tt> and team <tt class="docutils literal"><span class="pre">name</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">league_data</span></tt> containing <tt class="docutils literal"><span class="pre">SOG</span></tt> by <cite>yearID</cite> averaged across the league.</li>
+</ol>
+<div class="highlight-r"><div class="highlight"><pre>require<span class="p">(</span>Lahman<span class="p">)</span> <span class="p">;</span> require<span class="p">(</span>plyr<span class="p">);</span> library<span class="p">(</span>ascii<span class="p">)</span>
+dat <span class="o">=</span> Teams<span class="p">[,</span>c<span class="p">(</span><span class="s">&#39;yearID&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;G&#39;</span><span class="p">,</span> <span class="s">&#39;SO&#39;</span><span class="p">)]</span>
+team_data <span class="o">=</span> na.omit<span class="p">(</span>transform<span class="p">(</span>dat<span class="p">,</span> SOG <span class="o">=</span> round<span class="p">(</span>SO<span class="o">/</span>G<span class="p">,</span> <span class="m">2</span><span class="p">)))</span>
+league_data <span class="o">=</span> ddply<span class="p">(</span>team_data<span class="p">,</span> .<span class="p">(</span>yearID<span class="p">),</span> summarize<span class="p">,</span> SOG <span class="o">=</span> mean<span class="p">(</span>SOG<span class="p">))</span>
+ascii<span class="p">(</span>head<span class="p">(</span>team_data<span class="p">),</span> type <span class="o">=</span> <span class="s">&#39;rst&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="16%" />
+<col width="44%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">yearID</th>
+<th class="head">name</th>
+<th class="head">G</th>
+<th class="head">SO</th>
+<th class="head">SOG</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>1871.00</td>
+<td>Boston Red Stockings</td>
+<td>31.00</td>
+<td>19.00</td>
+<td>0.61</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>1871.00</td>
+<td>Chicago White Stockings</td>
+<td>28.00</td>
+<td>22.00</td>
+<td>0.79</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>1871.00</td>
+<td>Cleveland Forest Citys</td>
+<td>29.00</td>
+<td>25.00</td>
+<td>0.86</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>1871.00</td>
+<td>Fort Wayne Kekiongas</td>
+<td>19.00</td>
+<td>9.00</td>
+<td>0.47</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>1871.00</td>
+<td>New York Mutuals</td>
+<td>33.00</td>
+<td>15.00</td>
+<td>0.45</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>1871.00</td>
+<td>Philadelphia Athletics</td>
+<td>28.00</td>
+<td>23.00</td>
+<td>0.82</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="charts">
+<h2>Charts<a class="headerlink" href="#charts" title="Permalink to this headline">¶</a></h2>
+<p>We will start by first creating a scatterplot of <cite>SOG</cite> by <cite>yearID</cite> across all teams. We use the <cite>rPlot</cite> function which uses the PolyChartsJS library to create interactive visualizations. The formula interface specifies the x and y variables, the data to use and the type of plot. We  also specify a <cite>size</cite> and <cite>color</cite> argument to style the points. Finally, we pass a <cite>tooltip</cite> argument, which is a javascript function that overrides the default tooltip to display the information we require. You will see below the R code and the resulting chart.</p>
+<div class="highlight-r"><div class="highlight"><pre>require<span class="p">(</span>rCharts<span class="p">)</span>
+p1 <span class="o">&lt;-</span> rPlot<span class="p">(</span>SOG <span class="o">~</span> yearID<span class="p">,</span> data <span class="o">=</span> team_data<span class="p">,</span>
+  type <span class="o">=</span> <span class="s">&quot;point&quot;</span><span class="p">,</span>
+  size <span class="o">=</span> list<span class="p">(</span>const <span class="o">=</span> <span class="m">2</span><span class="p">),</span>
+  color <span class="o">=</span> list<span class="p">(</span>const <span class="o">=</span> <span class="s">&quot;#888&quot;</span><span class="p">),</span>
+  tooltip <span class="o">=</span> <span class="s">&quot;#! function(item){</span>
+<span class="s">    return item.SOG + &#39; &#39; + item.name + &#39; &#39; + item.yearID</span>
+<span class="s">   } !#&quot;</span>
+<span class="p">)</span>
+p1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/chart1.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart33f943078d49
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/chart1.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<p>Now, we need to add a line plot of the  average <tt class="docutils literal"><span class="pre">SOG</span></tt> for the league by <tt class="docutils literal"><span class="pre">yearID</span></tt>. We do this by adding a second layer to the chart, which copies the elements of the previous layer and overrides the <tt class="docutils literal"><span class="pre">data</span></tt>, <cite>type</cite>, <tt class="docutils literal"><span class="pre">color</span></tt> and <tt class="docutils literal"><span class="pre">tooltip</span></tt> arguments. The R code is shown below and you will note that the resulting chart now shows a blue line chart corresponding to the league average <tt class="docutils literal"><span class="pre">SOG</span></tt>.</p>
+<div class="highlight-r"><div class="highlight"><pre>p1<span class="o">$</span>layer<span class="p">(</span>data <span class="o">=</span> league_data<span class="p">,</span> type <span class="o">=</span> <span class="s">&#39;line&#39;</span><span class="p">,</span>
+  color <span class="o">=</span> list<span class="p">(</span>const <span class="o">=</span> <span class="s">&#39;blue&#39;</span><span class="p">),</span> copy_layer <span class="o">=</span> <span class="k-Variable">T</span><span class="p">,</span> tooltip <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+p1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/chart2.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart33f943078d49
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/chart2.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<p>Finally, we will overlay a line plot of <tt class="docutils literal"><span class="pre">SOG</span></tt> by <tt class="docutils literal"><span class="pre">yearID</span></tt> for a specific team <cite>name</cite>. Later, while building the shiny app, we will turn this into an input variable that a user can choose from a dropdown menu. We use the layer approach used earlier and this time override the <cite>data</cite> and <cite>color</cite> arguments so that the line plot for the team stands out from the league average.</p>
+<div class="highlight-r"><div class="highlight"><pre>myteam <span class="o">=</span> <span class="s">&quot;Boston Red Sox&quot;</span>
+p1<span class="o">$</span>layer<span class="p">(</span>data <span class="o">=</span> team_data<span class="p">[</span>team_data<span class="o">$</span>name <span class="o">==</span> myteam<span class="p">,],</span>
+  color <span class="o">=</span> list<span class="p">(</span>const <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">),</span>
+  copy_layer <span class="o">=</span> <span class="k-Variable">T</span><span class="p">)</span>
+p1<span class="o">$</span>set<span class="p">(</span>dom <span class="o">=</span> <span class="s">&#39;chart3&#39;</span><span class="p">)</span>
+p1
+</pre></div>
+</div>
+<iframe src='
+../_downloads/chart3.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart3
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/chart3.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+<p>Let us add a little more interactivity to the chart. To keep it simple, we will use handlers in PolychartJS to initiate an action when a user clicks on a point. The current handler is a simple one, which just displays the name of the team clicked on. If you are familiar with Javascript event handlers, the code should be self explanatory.</p>
+<div class="highlight-r"><div class="highlight"><pre>p2 <span class="o">&lt;-</span> p1<span class="o">$</span>copy<span class="p">()</span>
+p2<span class="o">$</span>setTemplate<span class="p">(</span>afterScript <span class="o">=</span> <span class="s">&#39;</span>
+<span class="s">  &lt;script&gt;</span>
+<span class="s">    graph_chart3.addHandler(function(type, e) {</span>
+<span class="s">      var data;</span>
+<span class="s">      data = e.evtData;</span>
+<span class="s">      if (type === &quot;click&quot;) {</span>
+<span class="s">        return alert(&quot;You clicked on the team: &quot; + data.name[&quot;in&quot;][0]);</span>
+<span class="s">      }</span>
+<span class="s">    });</span>
+<span class="s">  &lt;/script&gt;</span>
+<span class="s">&#39;</span><span class="p">)</span>
+p2
+</pre></div>
+</div>
+<iframe src='
+../_downloads/interactivity.html
+' scrolling='no' seamless
+class='rChart polycharts '
+id=iframe-
+chart3
+></iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style><p><a class="reference download internal" href="../_downloads/interactivity.html"><tt class="xref download docutils literal"><span class="pre">Standalone</span></tt></a></p>
+</div>
+<div class="section" id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<p>Now it is time to convert this into a Shiny App. We will throw the data processing code into <cite>global.R</cite> so that it can be accessed both by <cite>ui.R</cite> and <cite>server.R</cite>. For the dropdown menu allowing users to choose a specific team, we will restrict the choices to only those which have data for more than 30 years. Accordingly, we have the following <cite>global.R</cite>.</p>
+<div class="highlight-r"><div class="highlight"><pre><span class="c1">## global.R</span>
+require<span class="p">(</span>Lahman<span class="p">);</span> require<span class="p">(</span>plyr<span class="p">)</span>
+dat <span class="o">=</span> Teams<span class="p">[,</span>c<span class="p">(</span><span class="s">&#39;yearID&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;G&#39;</span><span class="p">,</span> <span class="s">&#39;SO&#39;</span><span class="p">)]</span>
+team_data <span class="o">=</span> na.omit<span class="p">(</span>transform<span class="p">(</span>dat<span class="p">,</span> SOG <span class="o">=</span> round<span class="p">(</span>SO<span class="o">/</span>G<span class="p">,</span> <span class="m">2</span><span class="p">)))</span>
+league_data <span class="o">=</span> ddply<span class="p">(</span>team_data<span class="p">,</span> .<span class="p">(</span>yearID<span class="p">),</span> summarize<span class="p">,</span> SOG <span class="o">=</span> mean<span class="p">(</span>SOG<span class="p">))</span>
+THRESHOLD <span class="o">=</span> <span class="m">30</span>
+team_appearances <span class="o">=</span> count<span class="p">(</span>team_data<span class="p">,</span> .<span class="p">(</span>name<span class="p">))</span>
+teams_in_menu <span class="o">=</span> subset<span class="p">(</span>team_appearances<span class="p">,</span> freq <span class="o">&gt;</span> THRESHOLD<span class="p">)</span><span class="o">$</span>name
+</pre></div>
+</div>
+<p>For the UI, we will use a bootstrap page with controls being displayed in the sidebar. Shiny makes it really easy to create a page like this. See the annotated graphic below and the <cite>ui.R</cite> code that accompanies it to understand how the different pieces fit together.</p>
+<a href='http://glimmer.rstudio.com/ramnathv/strikeouts'>
+  <img src="http://i.imgur.com/QS0x32b.png">
+</a><p>We now need to write the server part of the shiny app. Thankfully, this is the easiest part, since it just involves wrapping the charting code inside <cite>renderChart</cite> and replacing user inputs to enable reactivity. We add a few more lines of code to set the height and title and remove the axis titles, since they are self explanatory.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Tutorials"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
