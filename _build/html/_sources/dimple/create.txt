@@ -14,7 +14,7 @@ The `dimple <http://dimplejs.org>`_ library supports most of the common chart ty
    :depth: 1
 
 
-You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see `API docs <>`_.  For more examples, see <`Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`_.
+You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see `API docs <>`_.  For more examples, see `Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`_.
 
 .. list-table:: 
     :widths: 25 25 70
@@ -77,7 +77,7 @@ Scatter/bubble Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2fa813e855d
+        chart19004afc6e87
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -124,7 +124,7 @@ Bar Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2fa840e835f1
+        chart19002eca405c
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -161,7 +161,7 @@ Bar Horizontal Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2fa85f066b4c
+        chart19001e0c33fd
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -216,7 +216,7 @@ Line Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2fa84165f
+        chart190079955bd
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -265,7 +265,7 @@ Area Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2fa87fc650
+        chart190011023008
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -288,7 +288,7 @@ Area Chart
 Pie and Donut Charts
 ----------
 
-Pie and donut charts are not currently provided in dimple (see `issue <_https://github.com/PMSI-AlignAlytics/dimple/issues/47>`) .
+Pie and donut charts are not currently provided in dimple (see `issue <https://github.com/PMSI-AlignAlytics/dimple/issues/47>`_) .
 
 
 
