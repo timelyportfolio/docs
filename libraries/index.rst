@@ -9,3 +9,4 @@ rCharts supports multiple javascript visualization libraries
    :maxdepth: 1
 
    ../nvd3/index
+   ../dimple/index
