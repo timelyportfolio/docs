@@ -172,7 +172,7 @@ make_edit_button('dimple-area')
 
 :download:`Standalone <_downloads/dimple-area.html>`
 
-Pie and Donut Charts
+Pie and Donut Charts (not yet supported)
 ----------
 
 Pie and donut charts are not currently provided in dimple (see `issue <https://github.com/PMSI-AlignAlytics/dimple/issues/47>`_) .

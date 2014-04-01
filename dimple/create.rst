@@ -77,7 +77,7 @@ Scatter/bubble Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart225860893f10
+        chart29002a9f415c
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -124,7 +124,7 @@ Bar Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart22585a645b04
+        chart290075477c22
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -161,7 +161,7 @@ Bar Horizontal Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2258ed55b00
+        chart29006dce422f
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -216,7 +216,7 @@ Line Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart225867952877
+        chart2900db352c7
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -265,7 +265,7 @@ Area Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart225847d11cf
+        chart290047795d2f
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -285,7 +285,7 @@ Area Chart
 
 :download:`Standalone <_downloads/dimple-area.html>`
 
-Pie and Donut Charts
+Pie and Donut Charts (not yet supported)
 ----------
 
 Pie and donut charts are not currently provided in dimple (see `issue <https://github.com/PMSI-AlignAlytics/dimple/issues/47>`_) .
