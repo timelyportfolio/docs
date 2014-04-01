@@ -184,7 +184,7 @@ rst: $(RST_FILES)
 
 %.rst: %.Rrst
 	@echo $(dir $^)
-	cd $(dir $^) && ../knit $(notdir $^) 
+	cd $(dir $^) && RScript ../knit $(notdir $^) 
 
 %.rst: %.Rmd
 	pandoc README.md -t rst | sed  's/^.. code:: S/.. sourcecode:: r/'
