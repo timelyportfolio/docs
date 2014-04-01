@@ -1,4 +1,4 @@
-.. _nvd3_charttypes:
+.. _dimple_charttypes:
 
 Create
 =======
@@ -77,7 +77,7 @@ Scatter/bubble Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart29002a9f415c
+        chart16bc12061899
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -124,7 +124,7 @@ Bar Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart290075477c22
+        chart16bc470240d6
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -161,7 +161,7 @@ Bar Horizontal Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart29006dce422f
+        chart16bc66d066db
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -216,7 +216,7 @@ Line Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart2900db352c7
+        chart16bc43dee89
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -265,7 +265,7 @@ Area Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart290047795d2f
+        chart16bc7f9d4317
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
