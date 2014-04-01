@@ -3,7 +3,7 @@
 dimple
 =====
 
-`dimple <http://dimplejs>`_ is a flexible and powerful charting library built on `d3.js <http://d3js.org>'_.  Strengths of dimple include multivariate plotting, thorough 'documentation <https://github.com/PMSI-AlignAlytics/dimple/wiki>'_, multiple chart types, numerous 'examples <http://dimplejs.org/examples_index.html>'_, and '<MIT license> <https://github.com/PMSI-AlignAlytics/dimple/blob/master/MIT-LICENSE.txt>'_.
+`dimple <http://dimplejs>`_ is a flexible and powerful charting library built on `d3.js <http://d3js.org>`_.  Strengths of dimple include multivariate plotting, thorough `documentation <https://github.com/PMSI-AlignAlytics/dimple/wiki>`_, multiple chart types, numerous `examples <http://dimplejs.org/examples_index.html>`_, and `MIT license <https://github.com/PMSI-AlignAlytics/dimple/blob/master/MIT-LICENSE.txt>`_.
 
 
 
