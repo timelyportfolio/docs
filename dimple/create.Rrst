@@ -14,7 +14,7 @@ The `dimple <http://dimplejs.org>`_ library supports most of the common chart ty
    :depth: 1
 
 
-You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see `API docs <>`.  For more examples, see <`Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`.
+You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through the basics of each plot type and adjust the parameters slightly.  For more thorough documentation of the API, see `API docs <>`_.  For more examples, see <`Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`_.
 
 .. list-table:: 
     :widths: 25 25 70
