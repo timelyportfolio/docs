@@ -1,0 +1,221 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://dimplejs.org/dist/dimple.v1.1.5.min.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 1000px;
+      height: 600px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart200413425bc7' class = 'rChart dimple'></div>    
+    <script type="text/javascript">
+  var opts = {
+ "dom": "chart200413425bc7",
+"width":   1000,
+"height":    600,
+"xAxis": {
+ "type": "addCategoryAxis",
+"showPercent": false,
+"orderRule": "Cell" 
+},
+"yAxis": {
+ "type": "addMeasureAxis",
+"showPercent": false 
+},
+"zAxis": [],
+"colorAxis": {
+ "type": "addColorAxis",
+"colorSeries": "Zscore",
+"palette": [ "red", "yellow", "green" ] 
+},
+"defaultColors": [],
+"layers": [],
+"legend": [],
+"x": "Cell",
+"y": "Zscore",
+"groups": "Colour",
+"type": "bubble",
+"bounds": {
+ "x":     90,
+"y":     30,
+"height":    500,
+"width":    850 
+},
+"id": "chart200413425bc7" 
+},
+    data = [{"Zscore":1.594,"Cell":"HTR8svn","Tissue":"Blastula","Colour":2},{"Zscore":0.024,"Cell":"Adult_CD4+","Tissue":"Blood","Colour":2},{"Zscore":5.231,"Cell":"CD14+","Tissue":"Blood","Colour":0},{"Zscore":3.933,"Cell":"CD20+","Tissue":"Blood","Colour":0},{"Zscore":6.222,"Cell":"CD34+","Tissue":"Blood","Colour":0},{"Zscore":0.164,"Cell":"CLL","Tissue":"Blood","Colour":2},{"Zscore":3.324,"Cell":"CMK","Tissue":"Blood","Colour":1},{"Zscore":2.913,"Cell":"GM06990","Tissue":"Blood","Colour":1},{"Zscore":3.357,"Cell":"GM12864","Tissue":"Blood","Colour":1},{"Zscore":4.041,"Cell":"GM12865","Tissue":"Blood","Colour":0},{"Zscore":5.082,"Cell":"GM12878","Tissue":"Blood","Colour":0},{"Zscore":2.727,"Cell":"GM12891","Tissue":"Blood","Colour":1},{"Zscore":2.739,"Cell":"GM12892","Tissue":"Blood","Colour":1},{"Zscore":3.042,"Cell":"GM18507","Tissue":"Blood","Colour":1},{"Zscore":2.308,"Cell":"GM19238","Tissue":"Blood","Colour":2},{"Zscore":0.286,"Cell":"GM19239","Tissue":"Blood","Colour":2},{"Zscore":1.965,"Cell":"GM19240","Tissue":"Blood","Colour":2},{"Zscore":3.534,"Cell":"HL-60","Tissue":"Blood","Colour":0},{"Zscore":1.518,"Cell":"Jurkat","Tissue":"Blood","Colour":2},{"Zscore":4.553,"Cell":"K562","Tissue":"Blood","Colour":0},{"Zscore":0.937,"Cell":"NB4","Tissue":"Blood","Colour":2},{"Zscore":5.124,"Cell":"Th1","Tissue":"Blood","Colour":0},{"Zscore":0.4,"Cell":"Th2","Tissue":"Blood","Colour":2},{"Zscore":2.467,"Cell":"AoAF","Tissue":"Blood vessel","Colour":2},{"Zscore":1.475,"Cell":"AoSMC","Tissue":"Blood vessel","Colour":2},{"Zscore":1.591,"Cell":"HBMEC","Tissue":"Blood vessel","Colour":2},{"Zscore":2.943,"Cell":"HMVEC-dAd","Tissue":"Blood vessel","Colour":1},{"Zscore":2.081,"Cell":"HMVEC-dBl-Ad","Tissue":"Blood vessel","Colour":2},{"Zscore":3.083,"Cell":"HMVEC-dBl-Neo","Tissue":"Blood vessel","Colour":1},{"Zscore":4.252,"Cell":"HMVEC-dLy-Ad","Tissue":"Blood vessel","Colour":0},{"Zscore":3.951,"Cell":"HMVEC-dLy-Neo","Tissue":"Blood vessel","Colour":0},{"Zscore":3.006,"Cell":"HMVEC-dNeo","Tissue":"Blood vessel","Colour":1},{"Zscore":3.578,"Cell":"HMVEC-LBl","Tissue":"Blood vessel","Colour":0},{"Zscore":3.332,"Cell":"HMVEC-LLy","Tissue":"Blood vessel","Colour":1},{"Zscore":3.641,"Cell":"HPAEC","Tissue":"Blood vessel","Colour":0},{"Zscore":1.918,"Cell":"HPAF","Tissue":"Blood vessel","Colour":2},{"Zscore":4.157,"Cell":"HUVEC","Tissue":"Blood vessel","Colour":0},{"Zscore":1.074,"Cell":"Osteobl","Tissue":"Bone","Colour":2},{"Zscore":3.416,"Cell":"BE2_C","Tissue":"Brain","Colour":0},{"Zscore":1.729,"Cell":"Gliobla","Tissue":"Brain","Colour":2},{"Zscore":-0.229,"Cell":"Medullo","Tissue":"Brain","Colour":2},{"Zscore":2.765,"Cell":"SK-N-MC","Tissue":"Brain","Colour":1},{"Zscore":-0.071,"Cell":"SK-N-SH","Tissue":"Brain","Colour":2},{"Zscore":0.321,"Cell":"HA-h","Tissue":"Brain hippocampus","Colour":2},{"Zscore":4.151,"Cell":"HMEC","Tissue":"Breast","Colour":0},{"Zscore":2.497,"Cell":"HMF","Tissue":"Breast","Colour":2},{"Zscore":2.295,"Cell":"MCF-7","Tissue":"Breast","Colour":2},{"Zscore":0.911,"Cell":"MCF-7","Tissue":"Breast","Colour":2},{"Zscore":1.949,"Cell":"T-47D","Tissue":"Breast","Colour":2},{"Zscore":3.285,"Cell":"HAc","Tissue":"Cerebellar","Colour":1},{"Zscore":3,"Cell":"HeLa-S3","Tissue":"Cervix","Colour":1},{"Zscore":-1.23,"Cell":"HeLa-S3","Tissue":"Cervix","Colour":2},{"Zscore":-0.894,"Cell":"Caco-2","Tissue":"Colon","Colour":2},{"Zscore":0.853,"Cell":"HCT-116","Tissue":"Colon","Colour":2},{"Zscore":3.59,"Cell":"HVMF","Tissue":"Connective","Colour":0},{"Zscore":3.643,"Cell":"WI-38","Tissue":"Embryonic lung","Colour":0},{"Zscore":1.772,"Cell":"WI-38","Tissue":"Embryonic lung","Colour":2},{"Zscore":2.276,"Cell":"A549","Tissue":"Epithelium","Colour":2},{"Zscore":2.301,"Cell":"HAEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":3.088,"Cell":"HCPEpiC","Tissue":"Epithelium","Colour":1},{"Zscore":0.07,"Cell":"HEEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":2.422,"Cell":"HIPEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":1.572,"Cell":"HNPCEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":1.864,"Cell":"HPdLF","Tissue":"Epithelium","Colour":2},{"Zscore":0.408,"Cell":"HRCEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":0.838,"Cell":"HRE","Tissue":"Epithelium","Colour":2},{"Zscore":1.202,"Cell":"HRPEpiC","Tissue":"Epithelium","Colour":2},{"Zscore":-0.645,"Cell":"pHTE","Tissue":"Epithelium","Colour":2},{"Zscore":0.794,"Cell":"RPTEC","Tissue":"Epithelium","Colour":2},{"Zscore":0.866,"Cell":"SAEC","Tissue":"Epithelium","Colour":2},{"Zscore":1.978,"Cell":"HESC","Tissue":"ES cell","Colour":2},{"Zscore":1.14,"Cell":"hESCT0","Tissue":"ES cell","Colour":2},{"Zscore":0.603,"Cell":"H9ES","Tissue":"ES cell","Colour":2},{"Zscore":3.268,"Cell":"HConF","Tissue":"Eye","Colour":1},{"Zscore":-1.378,"Cell":"WERI-Rb-1","Tissue":"Eye","Colour":2},{"Zscore":2.304,"Cell":"Chorion","Tissue":"Fetal membrane","Colour":2},{"Zscore":2.038,"Cell":"HFF","Tissue":"Foreskin","Colour":2},{"Zscore":1.275,"Cell":"HFF-Myc","Tissue":"Foreskin","Colour":2},{"Zscore":1.486,"Cell":"AG09319","Tissue":"Gingival","Colour":2},{"Zscore":2.979,"Cell":"HGF","Tissue":"Gingival","Colour":1},{"Zscore":1.657,"Cell":"HCFaa","Tissue":"Heart","Colour":2},{"Zscore":1.726,"Cell":"HCF","Tissue":"Heart","Colour":2},{"Zscore":3.169,"Cell":"HCM","Tissue":"Heart","Colour":1},{"Zscore":0.607,"Cell":"iPS","Tissue":"IPS","Colour":2},{"Zscore":4.511,"Cell":"HRGEC","Tissue":"Kidney","Colour":0},{"Zscore":1.238,"Cell":"8988T","Tissue":"Liver","Colour":2},{"Zscore":0.71,"Cell":"Hepatocytes","Tissue":"Liver","Colour":2},{"Zscore":2.314,"Cell":"HepG2","Tissue":"Liver","Colour":2},{"Zscore":0.68,"Cell":"Huh-7.5","Tissue":"Liver","Colour":2},{"Zscore":-0.239,"Cell":"Huh-7","Tissue":"Liver","Colour":2},{"Zscore":2.588,"Cell":"Stellate","Tissue":"Liver","Colour":1},{"Zscore":2.258,"Cell":"AG04450","Tissue":"Lung","Colour":2},{"Zscore":0.951,"Cell":"HPF","Tissue":"Lung","Colour":2},{"Zscore":0.723,"Cell":"NHLF","Tissue":"Lung","Colour":2},{"Zscore":1.665,"Cell":"E_myoblast","Tissue":"Muscle","Colour":2},{"Zscore":3.637,"Cell":"HSMM","Tissue":"Muscle","Colour":0},{"Zscore":3.317,"Cell":"HSMM","Tissue":"Muscle","Colour":1},{"Zscore":1.984,"Cell":"SKMC","Tissue":"Muscle","Colour":2},{"Zscore":1.638,"Cell":"Myometr","Tissue":"Myometrium","Colour":2},{"Zscore":2.151,"Cell":"NH-A","Tissue":"Nervous","Colour":2},{"Zscore":2.29,"Cell":"PANC-1","Tissue":"Pancreas","Colour":2},{"Zscore":1.535,"Cell":"PanIsletD","Tissue":"Pancreas","Colour":2},{"Zscore":0.732,"Cell":"PanIslets","Tissue":"Pancreas","Colour":2},{"Zscore":0.833,"Cell":"HPDE6-E6E7","Tissue":"Pancreatic duct","Colour":2},{"Zscore":2.519,"Cell":"LNCaP","Tissue":"Prostate","Colour":2},{"Zscore":0.929,"Cell":"LNCaP","Tissue":"Prostate","Colour":2},{"Zscore":2.12,"Cell":"PrEC","Tissue":"Prostate","Colour":2},{"Zscore":0.301,"Cell":"RWPE1","Tissue":"Prostate","Colour":2},{"Zscore":0.817,"Cell":"AG04449","Tissue":"Skin","Colour":2},{"Zscore":1.95,"Cell":"AG09309","Tissue":"Skin","Colour":2},{"Zscore":2.226,"Cell":"AG10803","Tissue":"Skin","Colour":2},{"Zscore":1.785,"Cell":"BJ","Tissue":"Skin","Colour":2},{"Zscore":1.66,"Cell":"Fibrobl","Tissue":"Skin","Colour":2},{"Zscore":1.131,"Cell":"FibroP","Tissue":"Skin","Colour":2},{"Zscore":0.883,"Cell":"Melano","Tissue":"Skin","Colour":2},{"Zscore":1.529,"Cell":"NHDF-Ad","Tissue":"Skin","Colour":2},{"Zscore":2.457,"Cell":"NHDF-neo","Tissue":"Skin","Colour":2},{"Zscore":5.625,"Cell":"NHEK","Tissue":"Skin","Colour":0},{"Zscore":1.475,"Cell":"ProgFib","Tissue":"Skin","Colour":2},{"Zscore":1.422,"Cell":"HA-sp","Tissue":"Spinal cord","Colour":2},{"Zscore":2.935,"Cell":"NT2-D1","Tissue":"Testis","Colour":1},{"Zscore":3.513,"Cell":"Urothelia","Tissue":"Urothelium","Colour":1},{"Zscore":2.931,"Cell":"Urothelia","Tissue":"Urothelium","Colour":1},{"Zscore":0.927,"Cell":"Ishikawa","Tissue":"Uterus","Colour":2},{"Zscore":-0.246,"Cell":"Ishikawa","Tissue":"Uterus","Colour":2}];
+  var svg = dimple.newSvg("#" + opts.id, opts.width, opts.height);
+
+  //data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
+  var myChart = new dimple.chart(svg, data);
+  if (opts.bounds) {
+    myChart.setBounds(opts.bounds.x, opts.bounds.y, opts.bounds.width, opts.bounds.height);//myChart.setBounds(80, 30, 480, 330);
+  }
+  //dimple allows use of custom CSS with noFormats
+  if(opts.noFormats) { myChart.noFormats = opts.noFormats; };
+  //for markimekko and addAxis also have third parameter measure
+  //so need to evaluate if measure provided
+  
+  //function to build axes
+  function buildAxis(position,layer){
+    var axis;
+    var axisopts = opts[position+"Axis"];
+    
+    if(axisopts.measure) {
+      axis = myChart[axisopts.type](position,layer[position],axisopts.measure);
+    } else {
+      axis = myChart[axisopts.type](position, layer[position]);
+    };
+    if(!(axisopts.type === "addPctAxis")) axis.showPercent = axisopts.showPercent;
+    if (axisopts.orderRule) axis.addOrderRule(axisopts.orderRule);
+    if (axisopts.grouporderRule) axis.addGroupOrderRule(axisopts.grouporderRule);  
+    if (axisopts.overrideMin) axis.overrideMin = axisopts.overrideMin;
+    if (axisopts.overrideMax) axis.overrideMax = axisopts.overrideMax;
+    if (axisopts.overrideMax) axis.overrideMax = axisopts.overrideMax;
+    if (axisopts.inputFormat) axis.dateParseFormat = axisopts.inputFormat;
+    if (axisopts.outputFormat) axis.tickFormat = axisopts.outputFormat;    
+    return axis;
+  };
+  
+  var c = null;
+  if(d3.keys(opts.colorAxis).length > 0) {
+    c = myChart[opts.colorAxis.type](opts.colorAxis.colorSeries,opts.colorAxis.palette) ;
+  }
+  
+  //allow manipulation of default colors to use with dimple
+  if(opts.defaultColors.length) {
+    opts.defaultColors = opts.defaultColors[0];
+    if (typeof(opts.defaultColors) == "function") {
+      //assume this is a d3 scale
+      //for now loop through first 20 but need a better way to handle
+      defaultColorsArray = [];
+      for (var n=0;n<20;n++) {
+        defaultColorsArray.push(opts.defaultColors(n));
+      };
+      opts.defaultColors = defaultColorsArray;
+    }
+    opts.defaultColors.forEach(function(d,i) {
+      opts.defaultColors[i] = new dimple.color(d);
+    })
+    myChart.defaultColors = opts.defaultColors;
+  }  
+  
+  //do series
+  //set up a function since same for each
+  //as of now we have x,y,groups,data,type in opts for primary layer
+  //and other layers reside in opts.layers
+  function buildSeries(layer, hidden){
+    //inherit from primary layer if not intentionally changed or xAxis, yAxis, zAxis null
+    if (!layer.xAxis) layer.xAxis = opts.xAxis;    
+    if (!layer.yAxis) layer.yAxis = opts.yAxis;
+    if (!layer.zAxis) layer.zAxis = opts.zAxis;
+    
+    var x = buildAxis("x", layer);
+    x.hidden = hidden;
+    
+    var y = buildAxis("y", layer);
+    y.hidden = hidden;
+    
+    //z for bubbles
+    var z = null;
+    if (!(typeof(layer.zAxis) === 'undefined') && layer.zAxis.type){
+      z = buildAxis("z", layer);
+    };
+    
+    //here think I need to evaluate group and if missing do null
+    //as the group argument
+    //if provided need to use groups from layer
+    var s = new dimple.series(myChart, null, x, y, z, c, dimple.plot[layer.type], dimple.aggregateMethod.avg, dimple.plot[layer.type].stacked);
+    
+    //as of v1.1.4 dimple can use different dataset for each series
+    if(layer.data){
+      //convert to an array of objects
+      var tempdata;
+      //avoid lodash for now
+      datakeys = d3.keys(layer.data)
+      tempdata = layer.data[datakeys[1]].map(function(d,i){
+        var tempobj = {}
+        datakeys.forEach(function(key){
+          tempobj[key] = layer.data[key][i]
+        })
+        return tempobj
+      })
+      s.data = tempdata;
+    }
+    
+    if(layer.hasOwnProperty("groups")) {
+      s.categoryFields = (typeof layer.groups === "object") ? layer.groups : [layer.groups];
+      //series offers an aggregate method that we will also need to check if available
+      //options available are avg, count, max, min, sum
+      if (!(typeof(layer.aggregate) === 'undefined')) {
+        s.aggregate = eval(layer.aggregate);
+      }
+      if (!(typeof(layer.lineWeight) === 'undefined')) {
+        s.lineWeight = eval(layer.lineWeight);
+      }
+      if (!(typeof(layer.barGap) === 'undefined')) {
+        s.barGap = eval(layer.barGap);
+      }    
+    };    
+   /* if (!(typeof(layer.eventHandler) === 'undefined')) {
+      layer.eventHandler = (layer.eventHandler.length === "undefined") ? layer.eventHandler : [layer.eventHandler];
+      layer.eventHandler.forEach(function(evt){
+        s.addEventHandler(evt.event, eval(evt.handler))
+      })
+    }*/
+      
+    myChart.series.push(s);
+    
+    /*placeholder fix domain of primary scale for new series data
+    //not working right now but something like this
+    //for now just use overrideMin and overrideMax from rCharts
+    for( var i = 0; i<2; i++) {
+      if (!myChart.axes[i].overrideMin) {
+        myChart.series[0]._axisBounds(i==0?"x":"y").min = myChart.series[0]._axisBounds(i==0?"x":"y").min < s._axisBounds(i==0?"x":"y").min ? myChart.series[0]._axisBounds(i==0?"x":"y").min : s._axisBounds(i==0?"x":"y").min;
+      }
+      if (!myChart.axes[i].overrideMax) {  
+        myChart.series[0]._axisBounds(i==0?"x":"y")._max = myChart.series[0]._axisBounds(i==0?"x":"y").max > s._axisBounds(i==0?"x":"y").max ? myChart.series[0]._axisBounds(i==0?"x":"y").max : s._axisBounds(i==0?"x":"y").max;
+      }
+      myChart.axes[i]._update();
+    }
+    */
+    
+    return s;
+  };
+  
+  buildSeries(opts, false);
+  if (opts.layers.length > 0) {
+    opts.layers.forEach(function(layer){
+      buildSeries(layer, true);
+    })
+  }
+  //unsure if this is best but if legend is provided (not empty) then evaluate
+  if(d3.keys(opts.legend).length > 0) {
+    var l =myChart.addLegend();
+    d3.keys(opts.legend).forEach(function(d){
+      l[d] = opts.legend[d];
+    });
+  }
+  //quick way to get this going but need to make this cleaner
+  if(opts.storyboard) {
+    myChart.setStoryboard(opts.storyboard);
+  };
+  myChart.draw();
+
+</script>
+    
+    <script></script>    
+  </body>
+</html>

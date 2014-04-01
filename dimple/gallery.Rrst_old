@@ -1,4 +1,4 @@
-header <- '.. _dimple_gallery:
+.. _dimple_gallery:
 
 Gallery
 =======
@@ -18,13 +18,13 @@ The `dimple <http://dimplejs.org>`_ library offers a wealth of common and uncomm
 ```{r setup, tidy = F, cache = F, echo = F}
 library(rCharts)
 options(
-  rcharts.mode = "iframe",
+  rcharts.mode = 'iframe', 
   rcharts.cdn = TRUE,
   RCHART_WIDTH = 700,
   RCHART_HEIGHT = 390
 )
 library(knitr)
-opts_chunk$set(tidy = F, results = "asis", comment = NA, results = "html")
+opts_chunk$set(tidy = F, results = 'asis', comment = NA, results = 'html')
 ```
 
 We will use the same data source that dimple uses for its example gallery.
@@ -39,50 +39,27 @@ data <- read.delim(
 colnames(data) <- gsub("[.]","",colnames(data))
 ```
 
-'
-
+```{r echo = F}
 make_example_pages <- function(exDir){
   rFiles = dir(exDir, pattern = "^example.*\\.R$")
-  examples <- sapply(rFiles,
+  examples <- sapply(rFiles[1:2],
     function(x){
-      sprintf('
-%s
---------------
-
-```{r %s}
-%s
-```
-
-:download:`Standalone <_downloads/%s.html>`
-
-
-'
-,x
-,gsub(x = x, pattern = ".R", replacement = "")
-,paste0(paste0(readLines(paste0(exDir,"/",x))),collapse="\n")
-#capture.output(create_chart(paste0(exDir,"/",x))$show())
-,gsub(x = x, pattern = ".R", replacement = "")
-)}
+      c(
+        x
+        ,"--------------"
+        ,"\n"
+        ,".. raw:: html\n"
+        ,paste0("  ",capture.output(create_chart(paste0(exDir,"/",x))$show()))
+        ,"\n"
+        ,":download:`Standalone <_downloads/dimple-scatter.html>`"
+        ,"\n\n"
+      )
+    }
   )
   return(examples)
 }
 
-sink("gallery.Rrst")
-cat(
-  header
-  ,make_example_pages("./_gallery")  
-  ,'
-.. raw:: html
-  
-  <br/><br/>
-    <style>
-    iframe.rChart{margin-bottom: 20px;}
-  a.download{display: none;}
-  a.button{color: black;}
-  #rickshaw iframe.rChart{height: 450px;}</style>
-  </style>
-'
-)
-sink()
-
+```{r results = 'asis'}
+cat(make_example_pages("./_gallery"),sep="\n")
+```
 
