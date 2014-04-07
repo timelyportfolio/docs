@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dimple/rCharts API &mdash; rCharts 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="rCharts 0.1.0 documentation" href="../index.html"/>
+        <link rel="up" title="dimple" href="index.html"/>
+        <link rel="next" title="Gallery" href="gallery.html"/>
+        <link rel="prev" title="Create" href="create.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> rCharts</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart/index.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/create.html">Create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/share.html">Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../nvd3/index.html">NVD3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">dimple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/nytinteractive.html">Visualizing Strikeouts</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">rCharts</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../libraries/index.html">Libraries</a> &raquo;</li>
+      
+          <li><a href="index.html">dimple</a> &raquo;</li>
+      
+    <li>dimple/rCharts API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/dimple/api.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="dimple-rcharts-api">
+<span id="api"></span><h1>dimple/rCharts API<a class="headerlink" href="#dimple-rcharts-api" title="Permalink to this headline">¶</a></h1>
+<p>In most cases the rCharts/dimple plugin has attempted to map the <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki">dimple API</a> on a one-to-one basis while keeping rCharts reference class methods consistent.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#dplot" id="id4">dPlot</a></li>
+<li><a class="reference internal" href="#xaxis-yaxis-zaxis" id="id5">xAxis, yAxis, zAxis</a></li>
+</ul>
+</div>
+<div class="section" id="dplot">
+<h2><a class="toc-backref" href="#id4">dPlot</a><a class="headerlink" href="#dplot" title="Permalink to this headline">¶</a></h2>
+<p>You can create an interactive plot making use of the dimple library using the <tt class="xref py py-func docutils literal"><span class="pre">dPlot()</span></tt> function.  The minimal parameters are listed in the table below.  The primary difference with dimple and other rCharts libraries is that arrays can be provided for x, y, and groups for pivot like functionality.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>x</td>
+<td>formula or string</td>
+<td>formula y ~ x or string x = &#8220;&#8221; or x=c(&#8220;&#8221;,&#8221;&#8221;,..) with column names from the data frame</td>
+</tr>
+<tr class="row-odd"><td>y</td>
+<td>string or strings</td>
+<td>y = &#8220;&#8221; or y = c(&#8220;&#8221;,&#8221;&#8221;,...) with column names from the data frame</td>
+</tr>
+<tr class="row-even"><td>data</td>
+<td>data frame</td>
+<td>A data frame containing the data to be plotted</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>string</td>
+<td>The type of chart to plot <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#line">&#8220;line&#8221;</a> , <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#bubble">&#8220;bubble&#8221;</a> , <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#bar">&#8220;bar&#8221;</a> , <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#area">&#8220;area&#8221;</a></td>
+</tr>
+<tr class="row-even"><td>z (optional)</td>
+<td>string</td>
+<td>z = &#8220;&#8221; with column names from the data frame</td>
+</tr>
+<tr class="row-odd"><td>groups (optional)</td>
+<td>string or strings</td>
+<td>groups = &#8220;&#8221; or groups = c(&#8220;&#8221;,&#8221;&#8221;,...)</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond this basic specification, there are numerous opportunities for customization as shown with the methods and parameters below.</p>
+</div>
+<div class="section" id="xaxis-yaxis-zaxis">
+<h2><a class="toc-backref" href="#id5">xAxis, yAxis, zAxis</a><a class="headerlink" href="#xaxis-yaxis-zaxis" title="Permalink to this headline">¶</a></h2>
+<p>dimple API: <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis">dimple.axis</a></p>
+<p>xAxis, yAxis, and zAxis will gets passed in the JSON spec as opts.xAxis, ...  By default rCharts will assign the x axis as <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addCategoryAxis">addCategoryAxis</a> (categorical/discrete) and y axis as <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addMeasureAxis">addMeasureAxis</a> (continuous/numeric).</p>
+<div class="section" id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>type</td>
+<td>string</td>
+<td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addMeasureAxis">&#8220;addMeasureAxis&#8221;</a>, <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addCategoryAxis">&#8220;addCategoryAxis&#8221;</a>, <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addTimeAxis">&#8220;addTimeAxis&#8221;</a>, <a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addPctAxis">&#8220;addPctAxis&#8221;</a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addOrderRule">orderRule</a></td>
+<td>string or array</td>
+<td>add a rule by which the values in a category axis will be ordered</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addGroupOrderRule">grouporderRule</a></td>
+<td>string or array</td>
+<td>add a rule by which the values in a group on a category axis will be ordered</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#overrideMin">overrideMin</a></td>
+<td>generally numeric</td>
+<td>manually override minimum for the axis</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#overrideMax">overrideMax</a></td>
+<td>generally numeric</td>
+<td>manually override maximum for the axis</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#dateParseFormat">inputFormat</a>  <strong>only for &#8220;addTimeAxis&#8221;</strong></td>
+<td>string</td>
+<td>d3 time parse format using <a class="reference external" href="https://github.com/mbostock/d3/wiki/Time-Formatting">d3 time formatting</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#tickFormat">outputFormat</a></td>
+<td>string</td>
+<td>formatting for the axis using the <a class="reference external" href="https://github.com/mbostock/d3/wiki/Time-Formatting">d3 time formatting</a> or <a class="reference external" href="https://github.com/mbostock/d3/wiki/Formatting">d3 formatting style</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p>Provide sample usages and an example similar to the gallery/create sections.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gallery.html" class="btn btn-neutral float-right" title="Gallery">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create.html" class="btn btn-neutral" title="Create"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ramnath Vaidyanathan.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

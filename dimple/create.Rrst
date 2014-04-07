@@ -29,18 +29,18 @@ You can create an interactive plot making use of the dimple library using the :f
     * - y
       - string or strings
       - y = "" or y = c("","",...) with column names from the data frame
-    * - z
-      - string
-      - z = "" with column names from the data frame
-    * - groups
-      - string or strings
-      - groups = "" or groups = c("","",...)
     * - data
       - data frame
       - A data frame containing the data to be plotted
     * - type
       - string
-      - The type of chart to plot
+      - The type of chart to plot `"line" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#line>`_ , `"bubble" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#bubble>`_ , `"bar" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#bar>`_ , `"area" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.plot#area>`_
+    * - z (optional)
+      - string
+      - z = "" with column names from the data frame
+    * - groups (optional)
+      - string or strings
+      - groups = "" or groups = c("","",...)
 
 
 

@@ -23,4 +23,5 @@ Here is the description directly from the dimple website.
    :maxdepth: 2
 
    create
+   api
    gallery
