@@ -14,7 +14,7 @@ The `dimple <http://dimplejs.org>`_ library supports most of the common chart ty
    :depth: 1
 
 
-You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through some basic chart types and adjust the parameters only minimally.  dimple is capable of much more with opportunity for customization through chart parameters and d3 manipulation.  For a more thorough documentation of the API, see `API docs <>`_.  For more examples, see `Dimple gallery <http://timelyportfolio.github.io/rCharts_dimple/gallery>`_.
+You can create an interactive plot making use of the dimple library using the :func:`dPlot` function.  We will go through some basic chart types and adjust the parameters only minimally.  dimple is capable of much more with opportunity for customization through chart parameters and d3 manipulation.  For a more thorough documentation of the API, see `API docs <./api.html>`_.  For more examples, see `Dimple gallery <./gallery.html>`_.
 
 .. list-table:: 
     :widths: 25 25 70
@@ -77,7 +77,7 @@ Scatter/bubble Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart281c2f723d6b
+        chart16781d7c4845
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -124,7 +124,7 @@ Bar Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart281c3bc744d0
+        chart16787be32747
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -161,7 +161,7 @@ Bar Horizontal Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart281c7ab43f8
+        chart1678acbc73
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -216,7 +216,7 @@ Line Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart281c447954e8
+        chart16787a878be
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
@@ -265,7 +265,7 @@ Area Chart
         ' scrolling='no' seamless
         class='rChart dimple '
         id=iframe-
-        chart281c29798f
+        chart16784998178e
         ></iframe>
         <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
