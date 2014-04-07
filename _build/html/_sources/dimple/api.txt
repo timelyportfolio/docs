@@ -62,7 +62,7 @@ Arguments
       - Description
     * - type
       - string
-      - `"addMeasureAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addMeasureAxis>`_, `"addCategoryAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addCategoryAxis>`_, `"addTimeAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addTimeAxis>`_, `"addPctAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addPctAxis>`_.
+      - `"addMeasureAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addMeasureAxis>`_, `"addCategoryAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addCategoryAxis>`_, `"addTimeAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addTimeAxis>`_, `"addPctAxis" <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addPctAxis>`_ .
     * - `orderRule <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.axis#addOrderRule>`_
       - string or array
       - add a rule by which the values in a category axis will be ordered
@@ -82,7 +82,21 @@ Arguments
       - string
       - formatting for the axis using the `d3 time formatting <https://github.com/mbostock/d3/wiki/Time-Formatting>`_ or `d3 formatting style <https://github.com/mbostock/d3/wiki/Formatting>`_ 
 
+Usage
+~~~~~
 
+Axis specifications can be provided in 3 ways.
+
+.. code::
+    
+    d1 <- dPlot(...)
+    d1$[x,y,z]Axis(...)
+
+.. code::
+
+    d1 <- dPlot(
+      [x,y,z]Axis = list(...)
+    )
 
 Details
 ~~~~~~
@@ -93,10 +107,52 @@ Provide sample usages and an example similar to the gallery/create sections.
 legend
 -----
 
-dimple API: `dimple.chart.legends <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#legends>`_
+dimple API: `dimple.chart.legends <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#addLegend>`_
+
 
 Arguments
 ~~~~~
+.. list-table:: 
+    :widths: 25 25 70
+    :header-rows: 1
+
+    * - Argument
+      - Type
+      - Description
+    * - x
+      - number or string %
+      - x coordinate of the left corner of the legend
+    * - y
+      - number or string %
+      - y coordinate of the top of the legend
+    * - width
+      - number or string %
+      - width of the legend
+    * - height
+      - number or string %
+      - height of the legend
+    * - horizontalAlign (optional)
+      - string "left" or "right"; "left" is default
+      - horizontal positioning of legend elements within the bounds defined
+
+Usage
+~~~~~
+
+Legends can be provided in 3 ways.
+
+.. code::
+
+    dPlot(...,legend = list(x=,y=,height=,width=,horizontalAlign=))
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$legend(x=,y=,height=,width=,horizontalAlign=)
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$set(legend = list(x=,y=,height=,width=,horizontalAlign=))
 
 Details
 ~~~~~
@@ -107,8 +163,33 @@ storyboard
 
 dimple API: `dimple.chart.storyboard <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#storyboard>`_
 
+
 Arguments
 ~~~~~
+.. list-table:: 
+    :widths: 25 25 70
+    :header-rows: 1
+
+    * - Argument
+      - Type
+      - Description
+    * - series
+      - string
+      - series for which we want dimple to use to animate the chart
+
+Usage
+~~~~~
+
+Storyboards can be provided in 2 ways.  Currently, storyboards do not have a method specifically assigned.
+
+.. code::
+
+    dPlot(...,storyboard = "series_for_storyboard")
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$set(storyboard = "series_for_storyboard")
 
 Details
 ~~~~~
@@ -122,6 +203,31 @@ dimple API: `dimple.series.lineWeight <https://github.com/PMSI-AlignAlytics/dimp
 
 Arguments
 ~~~~~
+.. list-table:: 
+    :widths: 25 25 70
+    :header-rows: 1
+
+    * - Argument
+      - Type
+      - Description
+    * - width
+      - number (default = 2)
+      - numeric value used to determine the weight of the line in a line chart or area chart in pixels
+
+
+Usage
+~~~~~
+
+lineWidth can be provided in 2 ways.  Currently, lineWidth does not have a method specifically assigned.
+
+.. code::
+
+    dPlot(...,lineWidth = width)
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$set(lineWidth = width)
 
 Details
 ~~~~~
@@ -134,6 +240,30 @@ dimple API: `dimple.series.barGap <https://github.com/PMSI-AlignAlytics/dimple/w
 
 Arguments
 ~~~~~
+.. list-table:: 
+    :widths: 25 25 70
+    :header-rows: 1
+
+    * - Argument
+      - Type
+      - Description
+    * - width
+      - number (default = 0.4)
+      - numeric value used to determine the weight of the line in a line chart or area chart in pixels
+
+Usage
+~~~~~
+
+barGap can be provided in 2 ways.  Currently, barGap does not have a method specifically assigned.
+
+.. code::
+
+    dPlot(...,barGap = gap)
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$set(barGap = gap)
 
 Details
 ~~~~~
@@ -146,6 +276,30 @@ dimple API: `dimple.series.aggregate <https://github.com/PMSI-AlignAlytics/dimpl
 
 Arguments
 ~~~~~
+.. list-table:: 
+    :widths: 25 25 70
+    :header-rows: 1
+
+    * - Argument
+      - Type
+      - Description
+    * - aggregate function
+      - string (avg, count, max, min, sum) `see dimple code <https://github.com/PMSI-AlignAlytics/dimple/tree/master/src/objects/aggregateMethod>`_
+      - aggregate function provided by dimple to specify how values are aggregated in a series
+
+Usage
+~~~~~
+
+aggregate can be provided in 2 ways.  Currently, aggregate does not have a method specifically assigned.
+
+.. code::
+
+    dPlot(...,aggregate = aggregatefunction)
+
+.. code::
+
+    d1 <- dPlot(...)
+    d1$set(aggregate = aggregatefunction)
 
 Details
 ~~~~~

@@ -1,0 +1,112 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Quick Start}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Credits}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}License}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}See Also}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}Getting Started}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Create}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Polycharts}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}NVD3}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Morris}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Highcharts}{8}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Rickshaw}{9}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}xCharts}{9}{subsection.2.1.6}
+\contentsline {section}{\numberline {2.2}Share}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Save}{9}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Publish}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Embed}{10}{subsection.2.2.3}
+\contentsline {subsubsection}{RMarkdown}{10}{subsubsection*.3}
+\contentsline {subsubsection}{Shiny}{11}{subsubsection*.4}
+\contentsline {chapter}{\numberline {3}Libraries}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}NVD3}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Create}{13}{subsection.3.1.1}
+\contentsline {subsubsection}{Scatter Chart}{13}{subsubsection*.5}
+\contentsline {subsubsection}{Multibar Chart}{14}{subsubsection*.6}
+\contentsline {subsubsection}{Multibar Horizontal Chart}{14}{subsubsection*.7}
+\contentsline {subsubsection}{Pie Chart}{14}{subsubsection*.8}
+\contentsline {subsubsection}{Donut Chart}{14}{subsubsection*.9}
+\contentsline {subsubsection}{Line Chart}{14}{subsubsection*.10}
+\contentsline {subsubsection}{Line with Focus Chart}{14}{subsubsection*.11}
+\contentsline {subsubsection}{Stacked Area Chart}{15}{subsubsection*.12}
+\contentsline {subsubsection}{Multi Chart}{15}{subsubsection*.13}
+\contentsline {section}{\numberline {3.2}dimple}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Create}{15}{subsection.3.2.1}
+\contentsline {subsubsection}{Scatter/bubble Chart}{16}{subsubsection*.14}
+\contentsline {subsubsection}{Bar Chart}{16}{subsubsection*.15}
+\contentsline {subsubsection}{Bar Horizontal Chart}{16}{subsubsection*.16}
+\contentsline {subsubsection}{Line Chart}{17}{subsubsection*.17}
+\contentsline {subsubsection}{Area Chart}{17}{subsubsection*.18}
+\contentsline {subsubsection}{Pie and Donut Charts (not yet supported)}{17}{subsubsection*.19}
+\contentsline {subsection}{\numberline {3.2.2}dimple/rCharts API}{17}{subsection.3.2.2}
+\contentsline {subsubsection}{dPlot}{17}{subsubsection*.20}
+\contentsline {subsubsection}{xAxis, yAxis, zAxis}{18}{subsubsection*.21}
+\contentsline {paragraph}{Arguments}{18}{paragraph*.22}
+\contentsline {paragraph}{Details}{18}{paragraph*.23}
+\contentsline {subsubsection}{legend}{18}{subsubsection*.24}
+\contentsline {paragraph}{Arguments}{19}{paragraph*.25}
+\contentsline {paragraph}{Details}{19}{paragraph*.26}
+\contentsline {subsubsection}{storyboard}{19}{subsubsection*.27}
+\contentsline {paragraph}{Arguments}{19}{paragraph*.28}
+\contentsline {paragraph}{Details}{19}{paragraph*.29}
+\contentsline {subsubsection}{lineWeight}{19}{subsubsection*.30}
+\contentsline {paragraph}{Arguments}{19}{paragraph*.31}
+\contentsline {paragraph}{Details}{19}{paragraph*.32}
+\contentsline {subsubsection}{barGap}{19}{subsubsection*.33}
+\contentsline {paragraph}{Arguments}{19}{paragraph*.34}
+\contentsline {paragraph}{Details}{19}{paragraph*.35}
+\contentsline {subsubsection}{aggregate}{19}{subsubsection*.36}
+\contentsline {paragraph}{Arguments}{19}{paragraph*.37}
+\contentsline {paragraph}{Details}{19}{paragraph*.38}
+\contentsline {subsection}{\numberline {3.2.3}Gallery}{19}{subsection.3.2.3}
+\contentsline {subsubsection}{example01\_bar\_vert.R}{21}{subsubsection*.39}
+\contentsline {subsubsection}{example02\_bar\_vert\_stack.R}{21}{subsubsection*.40}
+\contentsline {subsubsection}{example03\_bar\_vert\_100.R}{21}{subsubsection*.41}
+\contentsline {subsubsection}{example04\_bar\_vert\_grp.R}{22}{subsubsection*.42}
+\contentsline {subsubsection}{example05\_bar\_vert\_stack\_grp.R}{22}{subsubsection*.43}
+\contentsline {subsubsection}{example06\_bar\_vert\_stack\_100.R}{23}{subsubsection*.44}
+\contentsline {subsubsection}{example07\_bar\_horiz.R}{23}{subsubsection*.45}
+\contentsline {subsubsection}{example08\_bar\_horiz\_stack.R}{23}{subsubsection*.46}
+\contentsline {subsubsection}{example09\_bar\_horiz\_stack\_100.R}{24}{subsubsection*.47}
+\contentsline {subsubsection}{example10\_bar\_horiz\_grp.R}{24}{subsubsection*.48}
+\contentsline {subsubsection}{example11\_bar\_horiz\_stack\_grp.R}{24}{subsubsection*.49}
+\contentsline {subsubsection}{example12\_bar\_horiz\_stack\_100.R}{25}{subsubsection*.50}
+\contentsline {subsubsection}{example13\_marimekko\_vert.R}{25}{subsubsection*.51}
+\contentsline {subsubsection}{example14\_marimekko\_horiz.R}{26}{subsubsection*.52}
+\contentsline {subsubsection}{example15\_block\_matrix.R}{26}{subsubsection*.53}
+\contentsline {subsubsection}{example16\_scatter.R}{27}{subsubsection*.54}
+\contentsline {subsubsection}{example18\_lollipop\_vert\_grp.R}{27}{subsubsection*.55}
+\contentsline {subsubsection}{example19\_lollipop\_horiz.R}{28}{subsubsection*.56}
+\contentsline {subsubsection}{example20\_lollipop\_horiz\_grp.R}{28}{subsubsection*.57}
+\contentsline {subsubsection}{example21\_dot\_matrix.R}{28}{subsubsection*.58}
+\contentsline {subsubsection}{example22\_bubble.R}{29}{subsubsection*.59}
+\contentsline {subsubsection}{example23\_bubble\_lollipop\_vert.R}{29}{subsubsection*.60}
+\contentsline {subsubsection}{example24\_bubble\_lollipop\_vert\_grp.R}{30}{subsubsection*.61}
+\contentsline {subsubsection}{example25\_bubble\_lollipop\_horiz.R}{30}{subsubsection*.62}
+\contentsline {subsubsection}{example26\_bubble\_lollipop\_horiz\_grp.R}{31}{subsubsection*.63}
+\contentsline {subsubsection}{example27\_bubble\_matrix.R}{32}{subsubsection*.64}
+\contentsline {subsubsection}{example28\_area.R}{32}{subsubsection*.65}
+\contentsline {subsubsection}{example29\_area\_stack.R}{32}{subsubsection*.66}
+\contentsline {subsubsection}{example30\_area\_stack\_100.R}{33}{subsubsection*.67}
+\contentsline {subsubsection}{example31\_area\_grp.R}{33}{subsubsection*.68}
+\contentsline {subsubsection}{example32\_area\_grp\_stack.R}{34}{subsubsection*.69}
+\contentsline {subsubsection}{example33\_area\_grp\_stack\_100.R}{34}{subsubsection*.70}
+\contentsline {subsubsection}{example34\_area\_vert.R}{35}{subsubsection*.71}
+\contentsline {subsubsection}{example35\_area\_vert\_stack.R}{35}{subsubsection*.72}
+\contentsline {subsubsection}{example36\_area\_vert\_stack\_100.R}{35}{subsubsection*.73}
+\contentsline {subsubsection}{example37\_area\_vert\_grp.R}{36}{subsubsection*.74}
+\contentsline {subsubsection}{example38\_area\_vert\_grp\_stack.R}{36}{subsubsection*.75}
+\contentsline {subsubsection}{example39\_area\_vert\_grp\_stack\_100.R}{37}{subsubsection*.76}
+\contentsline {subsubsection}{example40\_line.R}{37}{subsubsection*.77}
+\contentsline {subsubsection}{example41\_line\_mult.R}{38}{subsubsection*.78}
+\contentsline {subsubsection}{example42\_line\_single\_grp.R}{38}{subsubsection*.79}
+\contentsline {subsubsection}{example43\_line\_mult\_grp.R}{38}{subsubsection*.80}
+\contentsline {subsubsection}{example44\_line\_vert.R}{39}{subsubsection*.81}
+\contentsline {subsubsection}{example45\_line\_vert\_mult.R}{39}{subsubsection*.82}
+\contentsline {subsubsection}{example46\_line\_vert\_grp.R}{40}{subsubsection*.83}
+\contentsline {subsubsection}{example47\_line\_vert\_mult\_grp.R}{40}{subsubsection*.84}
+\contentsline {subsubsection}{example51\_rCharts\_issue164.R}{40}{subsubsection*.85}
+\contentsline {chapter}{\numberline {4}Tutorials}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Visualizing Strikeouts}{43}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Data}{43}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Charts}{43}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Application}{45}{subsection.4.1.3}
