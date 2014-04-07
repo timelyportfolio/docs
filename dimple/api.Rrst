@@ -89,3 +89,64 @@ Details
 
 Provide sample usages and an example similar to the gallery/create sections.
 
+
+legend
+-----
+
+dimple API: `dimple.chart.legends <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#legends>`_
+
+Arguments
+~~~~~
+
+Details
+~~~~~
+
+
+storyboard
+-----
+
+dimple API: `dimple.chart.storyboard <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.chart#storyboard>`_
+
+Arguments
+~~~~~
+
+Details
+~~~~~
+
+
+
+lineWeight
+-----
+
+dimple API: `dimple.series.lineWeight <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.series#lineWeight>`_
+
+Arguments
+~~~~~
+
+Details
+~~~~~
+
+
+barGap
+-----
+
+dimple API: `dimple.series.barGap <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.series#barGap>`_
+
+Arguments
+~~~~~
+
+Details
+~~~~~
+
+
+aggregate
+-----
+
+dimple API: `dimple.series.aggregate <https://github.com/PMSI-AlignAlytics/dimple/wiki/dimple.series#aggregate>`_
+
+Arguments
+~~~~~
+
+Details
+~~~~~
+
